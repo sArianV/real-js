@@ -12,53 +12,46 @@ var controller = {
     },
     save: (req, res) => {
        var params = req.body;
+       var default_avg = "0";
+
+       //valido lo recibido en el body
        try{
         var validate_name = !validator.isEmpty(params.name);
         var validate_description = !validator.isEmpty(params.description);
-
+        var validate_avg = validator.isNumeric(default_avg);
        }catch(err){
             return res.status(200).send({
                 status: 'error',
                 message:'Faltan datos por enviar!'
             })
        }
-       if( validate_name && validate_description){
-       var article = new Article();
-       article.name = params.name;
-       article.description = params.description;
-       article.image = `../src/products/${params.id}`;
-       
-       article.save((err, articleStored)=> {
-        if(err || !articleStored){
-            return res.status(404).send({
-                status:'error',
-                message:'El articulo no se a guardado'
-            });
-        }
-        return res.status(200).send({
-            status: 'success',
-            article:articleStored 
-        }); 
-       });
+        if( validate_name && validate_description && validate_avg){
 
-      
-       
-        /* var newArticle = {
-            id: params.id,
-            name: params.name,
-            description: params.description, 
-            avg: 999999,
-            image: "../src/products/"+ params.id 
+            //creo y guardo el articulo en la base de datos
+            var article = new Article();
+            article.name = params.name;
+            article.description = params.description;
+            article.image = `../src/products/${params.name}`;
+            article.avg = default_avg;
+            article.save((err, articleStored)=> {
+            if(err || !articleStored){
+                return res.status(404).send({
+                    status:'error',
+                    message:'El articulo no se a guardado'
+                });
+            }
+            return res.status(200).send({
+                status: 'success',
+                article:articleStored 
+            }); 
+            });
+
+        }else{
+            return res.status(200).send({
+                status: 'error',
+                message:'Los datos no son correctos'
+            })
         }
-        return(res.status(200).send(newArticle));*/
-       }else{
-        return res.status(200).send({
-            status: 'error',
-            message:'Los datos no son correctos'
-        })
-       }
-        
-      
     }
 }
 
