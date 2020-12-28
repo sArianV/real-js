@@ -9,6 +9,7 @@ var app = express();
 
 //ficheros y rutas
 
+var article_routes = require('./routes/article');
 
 //midlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -19,15 +20,7 @@ app.use(bodyParser.json());
 
 //prefijos a rutas
 
-
-//ruta de prueba
-app.get('/test', (req , res) => {
-    
-    return(res.status(200).send({
-        name: 'nico' ,
-        status: 'gato'
-    }));
-});
+app.use('/api', article_routes);
 
 //exportar modulo
 module.exports = app;
