@@ -1,6 +1,6 @@
 'use strict'
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 //avg TODO
 var ArticleSchema = Schema({
@@ -10,6 +10,6 @@ var ArticleSchema = Schema({
     avg: Number,
     date: {type: Date, default: Date.now},
     image: String
-})
+});
 
-module.exports = moongose.model('Article', ArticleSchema);
+module.exports = mongoose.model('Article', ArticleSchema);
