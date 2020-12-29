@@ -52,6 +52,65 @@ var controller = {
                 message:'Los datos no son correctos'
             })
         }
+    },
+    getAll: (req, res) => {
+        //find 
+        Article.find({}).exec((err, articles) => {
+            
+            if(err){
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al devolver los articulos'
+                });
+            }
+            if(!articles){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No hay articulos'
+                });
+            }
+            
+            return res.status(200).send({
+                status: 'Success',
+                articles
+            });
+           
+        });
+    },
+    findOne: (req, res) =>{
+        
+        //capturo el parametro id y compruebo que exista
+        var article_id = req.params.id;
+        if (!article_id || article_id == null){
+            if(!articles){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'parametro incorrecto'
+                });
+            }
+        }
+
+        //Busco el articulo en DB
+        Article.findById(article_id, (err, articles) => {
+            
+            if(err){
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al devolver los articulos'
+                });
+            }
+            if(!articles){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No se encuentra el Articulo'
+                });
+            }            
+            return res.status(200).send({
+                status: 'Success',
+                articles
+            });
+           
+        });
     }
 }
 
