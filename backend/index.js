@@ -1,5 +1,7 @@
 'use strict'
 
+require('pretty-error').start();
+
 var mongoose = require('mongoose');
 var app = require('./app');
 var port = 3900;
