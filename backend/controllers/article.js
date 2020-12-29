@@ -149,7 +149,7 @@ var controller = {
                     return res.status(500).send({
                         status: 'error',
                         message: 'Error al modificar'
-                });
+                    });
                 }
                 if(!articleUpdate){
                     return res.status(404).send({
@@ -160,9 +160,8 @@ var controller = {
                 return res.status(200).send({
                     status:'success',
                     article: articleUpdate
-                });  
-                    
-                });      
+                });                    
+            });      
         }else{
             return res.status(200).send({
                 status: 'error',
