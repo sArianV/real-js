@@ -77,17 +77,15 @@ var controller = {
            
         });
     },
-    findOne: (req, res) =>{
+    find: (req, res) =>{
         
         //capturo el parametro id y compruebo que exista
         var article_id = req.params.id;
-        if (!article_id || article_id == null){
-            if(!articles){
-                return res.status(404).send({
-                    status: 'error',
-                    message: 'parametro incorrecto'
-                });
-            }
+        if (!article_id || article_id == null){ 
+            return res.status(404).send({
+                status: 'error',
+                message: 'parametro incorrecto'
+            });
         }
 
         //Busco el articulo en DB
@@ -111,7 +109,68 @@ var controller = {
             });
            
         });
-    }
+    },
+    delete: (req, res) =>{
+        var article_id = req.params.id;
+        Article.findByIdAndDelete({_id: article_id}, (err, articleRemoved)=> {
+            if(err){
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al borrar'
+            });
+            }
+            if(!articleRemoved){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No se ha podido borrar el articulo, no existe'
+            });
+            }
+            return res.status(200).send({
+                status:'success',
+                article: articleRemoved
+             })
+        })  
+    },  
+    update: (req, res) =>{
+        var article_id = req.params.id;
+        var params = req.body;
+        try{
+            var validate_name = !validator.isEmpty(params.name);
+            var validate_description = !validator.isEmpty(params.description);
+        }catch{
+            return res.status(200).send({
+                status: 'error',
+                message: 'Faltan datos por enviar'
+            });
+        }
+        if (validate_description && validate_name){
+            Article.findByIdAndUpdate({_id: article_id}, params, {new:true}, (err, articleUpdate) => {
+                if(err){
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al modificar'
+                });
+                }
+                if(!articleUpdate){
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No existe el articulo'
+                    });
+                }    
+                return res.status(200).send({
+                    status:'success',
+                    article: articleUpdate
+                });  
+                    
+                });      
+        }else{
+            return res.status(200).send({
+                status: 'error',
+                message: 'La validacion no es correcta'
+            });
+        }
+    }   
+       
 }
-
+//vale gato 
 module.exports = controller;
