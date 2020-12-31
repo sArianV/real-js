@@ -3,7 +3,8 @@ import './assets/css/App.css';
 
 //import componentes
 import Start from './components/Start';
-
+import ShowArticle from './components/ShowArticle';
+import Header from './components/Header';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
       </header>
       <section className="componentes">
-        <Start/>
+        < Header/>
       </section>
     </div>
   );
