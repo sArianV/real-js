@@ -115,6 +115,7 @@ var controller = {
 
         //valido lo recibido en el body
         try {
+            var validate_barcode = !validator.isEmpty(params.barcode);
             var validate_name = !validator.isEmpty(params.name);
             var validate_description = !validator.isEmpty(params.description);
             var validate_avg = validator.isNumeric(default_avg);
@@ -124,10 +125,11 @@ var controller = {
                 message: 'Faltan datos por enviar!'
             })
         }
-        if (validate_name && validate_description && validate_avg) {
+        if (validate_name && validate_description && validate_avg && validate_barcode) {
 
             //creo y guardo el articulo en la base de datos
             var article = new Article();
+            article.barcode = params.barcode;
             article.name = params.name;
             article.description = params.description;
             article.image = `../src/products/${params.name}`;
@@ -194,6 +196,34 @@ var controller = {
                 message: 'La validacion no es correcta'
             });
         }
+    },
+    search: (req , res) => {
+        var searchString = req.params.search;
+
+        Article.find({ "$or": [
+            {"barcode": { "$regex": searchString, "$options": "i"}},
+            {"name": { "$regex": searchString, "$options": "i"}},
+            {"description": { "$regex": searchString, "$options": "i"}}
+        ]})
+        .sort([['date', 'descending']])
+        .exec((err, articles) => {
+            if (err){
+                return res.status(500).send({
+                    status:'error',
+                    message: 'error en la peticion'
+                });
+            }
+            if (!articles || articles.length <= 0){
+                return res.status(404).send({
+                    status:'error',
+                    message: 'No hay articulos que coincidan'
+                });
+            }
+            return res.status(200).send({
+                status:'succes',
+                articles
+            });
+        });
     }
 
 }

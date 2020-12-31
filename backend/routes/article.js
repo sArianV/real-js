@@ -10,7 +10,8 @@ var router = express.Router();
 router.post('/article-delete/:id', ArticleController.delete);
 router.get('/articles/:n?', ArticleController.get);
 router.get('/article-find/:id', ArticleController.find);
-router.post('/test-save', ArticleController.save);
+router.post('/article-save', ArticleController.save);
+router.get('/article-search/:search', ArticleController.search);
 router.put('/article-update/:id', ArticleController.update);
 
 module.exports = router;

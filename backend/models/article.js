@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 //avg TODO
 var ArticleSchema = Schema({
+    barcode : String,
     name: String,
     description: String, 
     avg: Number,
