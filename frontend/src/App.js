@@ -4,6 +4,7 @@ import './assets/css/App.css';
 //import componentes
 import Start from './components/Start';
 
+require('pretty-error').start();
 
 function App() {
   return (
