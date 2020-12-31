@@ -7,6 +7,7 @@ const {
 const PAGESIZE = 20;
 var controller = {
     delete: (req, res) => {
+        //falta verificar id
         var article_id = req.params.id;
         Article.findByIdAndDelete({
             _id: article_id
