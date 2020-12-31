@@ -1,10 +1,15 @@
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
+import 'fontsource-roboto';
+
+//import Material ui
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
 
 //import componentes
-import Start from './components/Start';
-import ShowArticle from './components/ShowArticle';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 
 require('pretty-error').start();
@@ -13,16 +18,11 @@ require('pretty-error').start();
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <Grid container xs={12} spacing={0}>
+        <Navbar />
 
-      </header>
-      <section className="componentes">
-        < Header/>
-      </section>
+
+      </Grid>
     </div>
   );
 }
