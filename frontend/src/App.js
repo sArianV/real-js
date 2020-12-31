@@ -3,8 +3,13 @@ import './assets/css/App.css';
 
 //import componentes
 import Start from './components/Start';
+<<<<<<< HEAD
 import ShowArticle from './components/ShowArticle';
 import Header from './components/Header';
+=======
+
+require('pretty-error').start();
+>>>>>>> e8980cfda1490eb297729ca67952fb4c816f473e
 
 function App() {
   return (
