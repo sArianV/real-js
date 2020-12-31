@@ -1,10 +1,7 @@
-import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
-import 'fontsource-roboto';
+import '@fontsource/roboto';
 
 //import Material ui
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 
