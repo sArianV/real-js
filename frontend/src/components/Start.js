@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Start extends Component{
     render(){
         let losPibe = {
-            participantes:['Arian','Vale','Nico']
+            participantes:['Arian','Vale','Nico','Agus']
         };
         
         return(
