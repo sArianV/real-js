@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 //importar iconos
-import SearchIcon from '@material-ui/icons/Search';
+import AddIcon from '@material-ui/icons/Add';
 import ListIcon from '@material-ui/icons/List';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 const useStyles = makeStyles((theme) => ({
@@ -35,9 +35,9 @@ export default function SimpleList() {
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
-                        <SearchIcon />
+                        <AddIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Buscar un Articulo" />
+                    <ListItemText primary="Agregar Articulos" />
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>

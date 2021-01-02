@@ -1,4 +1,4 @@
-import './assets/css/App.css';
+import './App.css';
 import '@fontsource/roboto';
 
 //import Material ui
@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 
 
 //import componentes
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/Navbar';
 
 
 require('pretty-error').start();
