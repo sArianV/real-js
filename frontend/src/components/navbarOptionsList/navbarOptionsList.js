@@ -7,9 +7,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 //importar iconos
-import AddIcon from '@material-ui/icons/Add';
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import BarChartIcon from '@material-ui/icons/BarChart';
 import ListIcon from '@material-ui/icons/List';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import FormatListNumberedRtlIcon from '@material-ui/icons/FormatListNumberedRtl';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -25,28 +28,54 @@ export default function SimpleList() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} >
             <List component="nav" aria-label="main mailbox folders">
-                <ListItem button>
-                    <ListItemIcon>
-                        <ListIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Listar Articulos" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <AddIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Agregar Articulos" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <DeleteForeverIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Borrar Articulo" />
-                </ListItem>
-            </List>
             <Divider />
+
+                <ListItem button>
+                    <ListItemIcon>
+                        <ShoppingCartIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="Caja" />
+                </ListItem>
+
+                <Divider component="li" variant="inset" />
+                <ListItem button>
+                    <ListItemIcon>
+                        <ReceiptIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Ultimas ventas" />
+                </ListItem>
+
+                <Divider component="li" variant="inset" />
+                <ListItem button>
+                    <ListItemIcon>
+                        <ListIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Articulos" />
+                </ListItem>
+                
+                <Divider component="li" variant="inset" />
+                <ListItem button>
+                    <ListItemIcon>
+                        <FormatListNumberedRtlIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Stock" />
+                </ListItem>
+                
+                
+                <Divider component="li" variant="inset" />
+                <ListItem button>
+                    <ListItemIcon>
+                        <BarChartIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Balance" />
+                </ListItem>
+                <Divider />
+           
+            </List>
+            
+            
         </div>
     );
 }

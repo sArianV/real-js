@@ -1,0 +1,8 @@
+.on-bot{
+    position: absolute;
+    bottom: 3vh;  
+    left:  4.5em;
+}
+.exit-button-color{
+    background-color: #fc3737;
+}
