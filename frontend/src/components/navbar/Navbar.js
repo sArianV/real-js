@@ -21,7 +21,7 @@ class Navbar extends Component{
                     </div>   
                     
                     <ArticlesMenu />
-                    <Exit className = "on-bot"/> 
+                    <Exit /> 
                 </Paper>
             </Grid> 
                 
