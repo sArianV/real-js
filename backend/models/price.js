@@ -9,4 +9,4 @@ var PriceSchema = Schema({
     owner: {type: Schema.Types.ObjectId, ref: 'User', required: true}
 })
 
-module.exports = moongose.model('Price', PriceSchema);
+module.exports = mongoose.model('Price', PriceSchema);

@@ -1,6 +1,7 @@
 'use strict'
 var validator = require('validator');
 var Article = require('../models/article');
+var Price = require('../models/price');
 const {
     param
 } = require('../routes/article');
@@ -120,8 +121,8 @@ var controller = {
             var validate_name = !validator.isEmpty(params.name);
             var validate_description = !validator.isEmpty(params.description);
             var validate_avg = validator.isNumeric(default_avg);
-            var validate_list_price = !validator.isNumeric(params.list_price);
-            var validate_sale_price= !validator.isNumeric(default_sale_price);
+            var validate_list_price = validator.isNumeric(params.list_price);
+            var validate_sale_price = validator.isNumeric(params.sale_price);
         } catch (err) {
             return res.status(200).send({
                 status: 'error',
@@ -142,7 +143,7 @@ var controller = {
             price.article = article;
             price.sale_price = params.sale_price;
             price.list_price = params.list_price;
-            article.save((err, articleStored) => {
+            /*article.save((err, articleStored) => {
                 if (err || !articleStored) {
                     return res.status(404).send({
                         status: 'error',
@@ -153,8 +154,8 @@ var controller = {
                     status: 'success',
                     article: articleStored
                 });
-            });
-            price.save((err, priceStored) => {
+            });*/
+           price.save((err, priceStored) => {
                 if (err || !priceStored) {
                     return res.status(404).send({
                         status: 'error',
@@ -163,7 +164,7 @@ var controller = {
                 }
                 return res.status(200).send({
                     status: 'success',
-                    article: priceStored
+                    price: priceStored
                 });
             });
 
