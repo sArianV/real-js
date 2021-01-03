@@ -2,10 +2,11 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var ArticleSchema = Schema({
+var PriceSchema = Schema({
     article: {type: Schema.Types.ObjectId, ref: 'Article', required: true},
     sale_price: {type:Number, required: true},
-    list_price: {type:Number, required: true}
+    list_price: {type:Number, required: true},
+    owner: {type: Schema.Types.ObjectId, ref: 'User', required: true}
 })
 
-module.exports = moongose.model('Price', ArticleSchema);
+module.exports = moongose.model('Price', PriceSchema);

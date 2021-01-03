@@ -6,6 +6,8 @@ var Schema = mongoose.Schema;
 var ArticleSchema = Schema({
     barcode : String,
     name: String,
+    trademark: String,
+    category: String,
     description: String, 
     avg: Number,
     date: {type: Date, default: Date.now},
