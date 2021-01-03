@@ -1,8 +1,8 @@
 .on-bot{
-    position: absolute;
-    bottom: 3vh;  
+    position: absolute !important;
+    bottom: 3vh !important;  
     left:  4.5em;
 }
 .exit-button-color{
-    background-color: #fc3737;
+    background-color: #fc3737 !important;
 }

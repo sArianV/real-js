@@ -13,5 +13,5 @@ router.get('/article-find/:id', ArticleController.find);
 router.post('/article-save', ArticleController.save);
 router.get('/article-search/:search', ArticleController.search);
 router.put('/article-update/:id', ArticleController.update);
-
+//router.get('/article-gain/:id', ArticleController.gain);
 module.exports = router;

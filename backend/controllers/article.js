@@ -120,13 +120,16 @@ var controller = {
             var validate_name = !validator.isEmpty(params.name);
             var validate_description = !validator.isEmpty(params.description);
             var validate_avg = validator.isNumeric(default_avg);
+            var validate_list_price = !validator.isNumeric(params.list_price);
+            var validate_sale_price= !validator.isNumeric(default_sale_price);
         } catch (err) {
             return res.status(200).send({
                 status: 'error',
                 message: 'Faltan datos por enviar!'
             })
         }
-        if (validate_name && validate_description && validate_avg && validate_barcode) {
+        if (validate_name && validate_description && validate_avg && validate_barcode &&  
+            validate_list_price && validate_sale_price) {
 
             //creo y guardo el articulo en la base de datos
             var article = new Article();
@@ -135,6 +138,10 @@ var controller = {
             article.description = params.description;
             article.image = `../src/products/${params.name}`;
             article.avg = default_avg;
+            var price = new Price();
+            price.article = article;
+            price.sale_price = params.sale_price;
+            price.list_price = params.list_price;
             article.save((err, articleStored) => {
                 if (err || !articleStored) {
                     return res.status(404).send({
@@ -147,6 +154,18 @@ var controller = {
                     article: articleStored
                 });
             });
+            price.save((err, priceStored) => {
+                if (err || !priceStored) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'El precio no se guardo'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    article: priceStored
+                });
+            });
 
         } else {
             return res.status(200).send({
@@ -155,7 +174,6 @@ var controller = {
             })
         }
     },
-
     update: (req, res) => {
         var article_id = req.params.id;
         var params = req.body;
@@ -225,8 +243,13 @@ var controller = {
                 articles
             });
         });
-    }
-
+    },
+    item_price: (req , res) => {
+        //TODO
+     },    
+    gain: (req , res) => {
+       //TODO
+    }    
 }
 
 module.exports = controller;
