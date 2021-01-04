@@ -15,6 +15,6 @@ router.get('/article-search/:search', ArticleController.search);
 router.put('/article-update/:id', ArticleController.update);
 router.get('/article-gain/:id', ArticleController.gain);
 router.get('/article-stock/:id', ArticleController.stock);
-router.post('/article-sale/:search', ArticleController.sale);
-//router.get('/sales/:n?', ArticleController.get);
+router.post('/article-ticket/:search', ArticleController.ticket);
+//router.get('/sales/:n?', ArticleController.g);
 module.exports = router;

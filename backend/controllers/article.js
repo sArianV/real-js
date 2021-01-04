@@ -68,7 +68,8 @@ var controller = {
         });
     },
     get: (req, res) => {
-
+        
+       
         var query = Article.find();
         var pageNumber = req.params.n;
 
@@ -106,7 +107,6 @@ var controller = {
                     message: 'No hay articulos'
                 });
             }
-
             return res.status(200).send({
                 status: 'Success',
                 articles
@@ -301,65 +301,8 @@ var controller = {
       });
 
     },
-    sale: (req, res) => {
-        var searchString = req.params.search;
-        //valido el nombre del producto(no puede ser null)
-        try {
-            var validate_name = !validator.isEmpty(searchString);
-        } catch (err) {
-            return res.status(200).send({
-                status: 'error',
-                message: 'Nombre de articulo invalido!'
-            })
-        }
-        if (validate_name) {
-            Article.find({ "$or": [
-                {"barcode": { "$regex": searchString, "$options": "i"}},
-                {"name": { "$regex": searchString, "$options": "i"}},
-                {"description": { "$regex": searchString, "$options": "i"}}
-            ]})
-            .exec((err, articles) => {
-                if (err){
-                    return res.status(500).send({
-                        status:'error',
-                        message: 'error en la peticion'
-                    });
-                }
-                if (!articles || articles.length <= 0){
-                    return res.status(404).send({
-                        status:'error',
-                        message: 'No hay articulos que coincidan'
-                    });
-                }
-                if (articles.units < 1){
-                    return res.status(404).send({
-                        status:'error',
-                        message: 'No hay articulos con este nombre'
-                    });
-                }else{
-                    var sale = new Sale();  
-                    sale.article = articles;
-                    //falta guardar la hs de la venta que no se como hacer
-                    sale.save((err, saleStored) => {
-                        if (err || !saleStored) {
-                            return res.status(404).send({
-                                status: 'error',
-                                message: 'El articulo no se a guardado'
-                            });
-                        }
-                        return res.status(200).send({
-                            status: 'success',
-                            article: saleStored
-                        });
-                    });
-                }
-            });
-        } else {
-            return res.status(200).send({
-                status: 'error',
-                message: 'No hay resultados en la busqueda'
-            })
-        }
+    ticket: (req, res) => {
+      //TODO
     }  
 }
 
