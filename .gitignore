@@ -5,3 +5,4 @@ frontend\.eslintcache
 *.log
 .eslintcache
 *.eslintcache
+.env
