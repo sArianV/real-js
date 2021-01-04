@@ -8,7 +8,10 @@ var ArticleSchema = Schema({
     name: String,
     trademark: String,
     category: String,
-    description: String, 
+    description: String,
+    list_price: Number,
+    sale_price: Number,
+    stock:Number,
     avg: Number,
     date: {type: Date, default: Date.now},
     image: String
