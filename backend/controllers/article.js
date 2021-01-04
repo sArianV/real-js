@@ -2,6 +2,7 @@
 var validator = require('validator');
 const { validate } = require('../models/article');
 var Article = require('../models/article');
+var Sale = require('../models/sale');
 //var Price = require('../models/price');
 
 const {
@@ -125,7 +126,7 @@ var controller = {
             var validate_avg = validator.isNumeric(default_avg);
             var validate_list_price = validator.isNumeric(params.list_price);
             var validate_sale_price = validator.isNumeric(params.sale_price);
-            var validate_stock = validator.isNumeric(params.stock);
+            var validate_units = validator.isNumeric(params.units);
         } catch (err) {
             return res.status(200).send({
                 status: 'error',
@@ -133,7 +134,7 @@ var controller = {
             })
         }
         if (validate_name && validate_description && validate_avg && validate_barcode &&  
-            validate_list_price && validate_sale_price && validate_stock) {
+            validate_list_price && validate_sale_price && validate_units) {
 
             //creo y guardo el articulo en la base de datos
             var article = new Article();
@@ -144,7 +145,7 @@ var controller = {
             article.avg = default_avg;
             article.sale_price = params.sale_price;
             article.list_price = params.list_price;
-            article.stock = params.stock;
+            article.units = params.units;
             article.save((err, articleStored) => {
                 if (err || !articleStored) {
                     return res.status(404).send({
@@ -279,7 +280,6 @@ var controller = {
       }
       //Busco en la BD por id y devuelvo la diferencia de precios 
       Article.findById(article_id, (err, articles) => {
-
           if (err) {
               return res.status(500).send({
                   status: 'error',
@@ -295,11 +295,71 @@ var controller = {
           return res.status(200).send({
               status: 'Success',
               message: 'El stock de este articulo es:',
-              Number: articles.stock
+              Number: articles.units
           });
 
       });
 
+    },
+    sale: (req, res) => {
+        var searchString = req.params.search;
+        //valido el nombre del producto(no puede ser null)
+        try {
+            var validate_name = !validator.isEmpty(searchString);
+        } catch (err) {
+            return res.status(200).send({
+                status: 'error',
+                message: 'Nombre de articulo invalido!'
+            })
+        }
+        if (validate_name) {
+            Article.find({ "$or": [
+                {"barcode": { "$regex": searchString, "$options": "i"}},
+                {"name": { "$regex": searchString, "$options": "i"}},
+                {"description": { "$regex": searchString, "$options": "i"}}
+            ]})
+            .exec((err, articles) => {
+                if (err){
+                    return res.status(500).send({
+                        status:'error',
+                        message: 'error en la peticion'
+                    });
+                }
+                if (!articles || articles.length <= 0){
+                    return res.status(404).send({
+                        status:'error',
+                        message: 'No hay articulos que coincidan'
+                    });
+                }
+                if (articles.units < 1){
+                    return res.status(404).send({
+                        status:'error',
+                        message: 'No hay articulos con este nombre'
+                    });
+                }else{
+                    var sale = new Sale();  
+                    sale.article = articles;
+                    //falta guardar la hs de la venta que no se como hacer
+                    sale.save((err, saleStored) => {
+                        if (err || !saleStored) {
+                            return res.status(404).send({
+                                status: 'error',
+                                message: 'El articulo no se a guardado'
+                            });
+                        }
+                        return res.status(200).send({
+                            status: 'success',
+                            article: saleStored
+                        });
+                    });
+                }
+            });
+        } else {
+            return res.status(200).send({
+                status: 'error',
+                message: 'No hay resultados en la busqueda'
+            })
+        }
     }  
 }
 

@@ -11,7 +11,7 @@ var ArticleSchema = Schema({
     description: String,
     list_price: Number,
     sale_price: Number,
-    stock:Number,
+    units:Number,
     avg: Number,
     date: {type: Date, default: Date.now},
     image: String
