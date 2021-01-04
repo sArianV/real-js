@@ -1,7 +1,9 @@
 'use strict'
 var validator = require('validator');
+const { validate } = require('../models/article');
 var Article = require('../models/article');
-var Price = require('../models/price');
+//var Price = require('../models/price');
+
 const {
     param
 } = require('../routes/article');
@@ -123,6 +125,7 @@ var controller = {
             var validate_avg = validator.isNumeric(default_avg);
             var validate_list_price = validator.isNumeric(params.list_price);
             var validate_sale_price = validator.isNumeric(params.sale_price);
+            var validate_stock = validator.isNumeric(params.stock);
         } catch (err) {
             return res.status(200).send({
                 status: 'error',
@@ -130,7 +133,7 @@ var controller = {
             })
         }
         if (validate_name && validate_description && validate_avg && validate_barcode &&  
-            validate_list_price && validate_sale_price) {
+            validate_list_price && validate_sale_price && validate_stock) {
 
             //creo y guardo el articulo en la base de datos
             var article = new Article();
@@ -139,11 +142,10 @@ var controller = {
             article.description = params.description;
             article.image = `../src/products/${params.name}`;
             article.avg = default_avg;
-            var price = new Price();
-            price.article = article;
-            price.sale_price = params.sale_price;
-            price.list_price = params.list_price;
-            /*article.save((err, articleStored) => {
+            article.sale_price = params.sale_price;
+            article.list_price = params.list_price;
+            article.stock = params.stock;
+            article.save((err, articleStored) => {
                 if (err || !articleStored) {
                     return res.status(404).send({
                         status: 'error',
@@ -154,20 +156,8 @@ var controller = {
                     status: 'success',
                     article: articleStored
                 });
-            });*/
-           price.save((err, priceStored) => {
-                if (err || !priceStored) {
-                    return res.status(404).send({
-                        status: 'error',
-                        message: 'El precio no se guardo'
-                    });
-                }
-                return res.status(200).send({
-                    status: 'success',
-                    price: priceStored
-                });
             });
-
+        
         } else {
             return res.status(200).send({
                 status: 'error',
@@ -245,12 +235,72 @@ var controller = {
             });
         });
     },
-    item_price: (req , res) => {
-        //TODO
-     },    
     gain: (req , res) => {
-       //TODO
-    }    
+        //capturo el parametro id y compruebo que exista
+        var article_id = req.params.id;
+        if (!article_id || article_id == null) {
+            return res.status(404).send({
+                status: 'error',
+                message: 'parametro incorrecto'
+            });
+        }
+        //Busco en la BD por id y devuelvo la diferencia de precios 
+        Article.findById(article_id, (err, articles) => {
+
+            if (err) {
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al devolver los articulos'
+                });
+            }
+            if (!articles) {
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No se encuentra el Articulo'
+                });
+            }
+            return res.status(200).send({
+                status: 'Success',
+                message: 'La ganancia de este articulo es:' ,
+                Number: articles.sale_price-articles.list_price
+            });
+
+        });
+
+    },
+    stock: (req , res) => {
+      //capturo el parametro id y compruebo que exista
+      var article_id = req.params.id;
+      if (!article_id || article_id == null) {
+          return res.status(404).send({
+              status: 'error',
+              message: 'parametro incorrecto'
+          });
+      }
+      //Busco en la BD por id y devuelvo la diferencia de precios 
+      Article.findById(article_id, (err, articles) => {
+
+          if (err) {
+              return res.status(500).send({
+                  status: 'error',
+                  message: 'Error al devolver los articulos'
+              });
+          }
+          if (!articles) {
+              return res.status(404).send({
+                  status: 'error',
+                  message: 'No se encuentra el Articulo'
+              });
+          }
+          return res.status(200).send({
+              status: 'Success',
+              message: 'El stock de este articulo es:',
+              Number: articles.stock
+          });
+
+      });
+
+    }  
 }
 
 module.exports = controller;
