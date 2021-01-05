@@ -41,9 +41,16 @@ export default function FormPropsTextFields() {
           </div>
         </form>
         <div className="button_create_account">
-          <Button variant="contained" color="primary" href="#contained-buttons">
+        <div className="">
+        <Button variant="contained" color="primary" href="/home">
+            Ingresar
+        </Button>
+        </div>
+        <div className="">
+          <Button variant="contained" color="primary" href="/registrarse">
             Create Account
       </Button>
+        </div>
         </div>
       </div>
     

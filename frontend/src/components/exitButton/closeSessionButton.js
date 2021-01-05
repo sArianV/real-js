@@ -15,6 +15,7 @@ export default function IconLabelButtons() {
   return (
 
     <Button
+      href="/"
       variant="contained"
       className="{classes.button} on-bot exit-button-color"
       startIcon={<ExitToAppIcon />}

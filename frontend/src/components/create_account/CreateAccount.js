@@ -54,7 +54,7 @@ export default function FormPropsTextFields() {
         </Button>
       </div>
       <div className="button_atras">
-        <Button variant="contained" color="secondary">
+        <Button variant="contained" color="secondary" href="/">
           Atras
         </Button>
       </div>

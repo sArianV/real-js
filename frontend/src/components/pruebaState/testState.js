@@ -12,12 +12,12 @@ class testState extends Component{
         contador:0
     };
     }
-    sumar(e){
+    sumar = (e) => {
         this.setState({
             contador: (this.state.contador + 1),
         });   
     }
-    restar(e){
+    restar = (e) =>{
         this.setState({
             contador: (this.state.contador -1)
         })
@@ -32,8 +32,8 @@ class testState extends Component{
                 </h1>
                 <p>{this.state.contador}</p>
                 <p>
-                     <input type="button" value ="Sumar" onClick={this.sumar.bind(this)}/>
-                     <input type="button" value ="Restar" onClick={this.restar.bind(this)}/>
+                     <input type="button" value ="Sumar" onClick={this.sumar}/>
+                     <input type="button" value ="Restar" onClick={this.restar}/>
                 </p>
             </div>
         )
