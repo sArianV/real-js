@@ -18,7 +18,7 @@
     left:35%;
     top:30%;
     width: 20vw ;
-    height: 25vh ;
+    height: 35vh ;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -38,6 +38,11 @@
 }
 .button_create_account{
     position:absolute;
-    left:41%;
-    top:65%;
+    left:43%;
+    top:67%;   
+}
+.button_atras{
+    position:absolute;
+    left:0%;
+    top:95%; 
 }

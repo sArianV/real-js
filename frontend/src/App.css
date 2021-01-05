@@ -1,5 +1,5 @@
 .App {
-  height: 100vw;
+  width: 100vw;
   height: 100vh;
   background-color: #09d3ac;
 }
@@ -20,5 +20,5 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #049e9e;
 }

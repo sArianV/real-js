@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import './login.css';
+import './createAccount.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,20 +18,27 @@ const useStyles = makeStyles((theme) => ({
     return (
     <div className = "home-login">
      <div className="titulo"> 
-         Login
+         Create Account
     </div>   
     <form className={classes.root} noValidate autoComplete="off">
       <div className = "formulario-login">
       <TextField className= "user-input"
           id="standard-username-input"
-          label="Username"
+          label="Ingrese su username"
+          type="username" 
+          autoComplete="current-username"
+          variant= "filled"
+        />
+         <TextField className= "user-input"
+          id="standard-username-input"
+          label="Ingrese su email"
           type="username" 
           autoComplete="current-username"
           variant= "filled"
         />
         <TextField className= "user-input"
           id="standard-password-input"
-          label="Password"
+          label="Ingrese su Password"
           type="password"
           autoComplete="current-password"
           variant= "filled"
@@ -40,7 +47,12 @@ const useStyles = makeStyles((theme) => ({
     </form>
     <div className="button_create_account">
       <Button variant="contained" color="primary" href="#contained-buttons">
-        Create Account
+       Register
+      </Button>
+    </div>
+    <div className="button_atras">
+      <Button variant="contained"  color="secondary">
+       Atras
       </Button>
     </div>
     </div>
