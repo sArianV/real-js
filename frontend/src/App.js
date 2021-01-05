@@ -18,7 +18,7 @@ require('pretty-error').start();
 function App() {
   return (
     <div className="container">
-      <div className="App">
+      
         <Grid container xs={12} spacing={0}>
           <Switch>
             <Route exact path='/' component={Navbar}/>
@@ -26,7 +26,7 @@ function App() {
             <Route path='/createaccount' component={CreateAccount} />
           </Switch>
         </Grid>
-      </div>
+      
     </div>
   );
 }
