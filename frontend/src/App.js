@@ -18,16 +18,16 @@ require('pretty-error').start();
 function App() {
   return (
     <div className="container">
-      <div className="App">
+      
         <Grid container xs={12} spacing={0}>
           <CreateAccount />
           <Login />
-          
+
           <Navbar />
           <BodyContent />
           
         </Grid>
-      </div>
+      
     </div>
   );
 }
