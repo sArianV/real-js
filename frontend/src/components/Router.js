@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './login/Login';
 import CreateAccount from './create_account/CreateAccount';
 import Landing from './landingPage/landing'
+import Error from './error/Error';
 
 class Router extends Component{
     render (){
@@ -14,6 +15,7 @@ class Router extends Component{
             <Route exact path='/' component={Login}/>
             <Route path='/home' component={Landing}/>
             <Route path='/registrarse' component={CreateAccount} />
+            <Route component = {Error}/>
           </Switch>
           </BrowserRouter>
         );

@@ -1,0 +1,10 @@
+.error{
+    background-color: rgb(109, 3, 3);
+    height: 100vh;
+    margin: 0px;
+    border-radius: 0% !important;
+}
+
+.msgerror{
+    background-color:rgb(255, 255, 255);
+}
