@@ -9,10 +9,6 @@ var UserSchema = Schema({
         type:String,
         required: true,
         unique: true,
-        validate: (value) => {
-            const regexp = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
-            return regexp.test(value);
-        },
     },
     email: {
         type: String,
