@@ -8,14 +8,17 @@
 }
 
 .hh{
-    width:40%;
+    background-image:url("./../../assets/images/error_pag.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100vw;
     height: 100vh ;
+}
+h2 {
+    margin:0;
 }
 .imgError{
-
+    position: absolute;
     width: 50% ;
     height: 100vh ;
-}
-.hh h2{
-    margin-top: 30%;
 }
