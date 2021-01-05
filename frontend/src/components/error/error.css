@@ -1,10 +1,21 @@
 .error{
-    background-color: rgb(109, 3, 3);
+    background-color: rgb(255, 255, 255)!important;
     height: 100vh;
     margin: 0px;
     border-radius: 0% !important;
+    padding: 0px;
+    position:relative;
 }
 
-.msgerror{
-    background-color:rgb(255, 255, 255);
+.hh{
+    width:40%;
+    height: 100vh ;
+}
+.imgError{
+
+    width: 50% ;
+    height: 100vh ;
+}
+.hh h2{
+    margin-top: 30%;
 }
