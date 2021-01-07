@@ -5,13 +5,14 @@
     border-radius: 0% !important;
     padding: 0px;
     position:relative;
+    width: 100%;
 }
 
 .hh{
     background-image:url("./../../assets/images/error_pag.gif");
     background-size: cover;
     background-repeat: no-repeat;
-    width:100vw;
+    width: 100%;
     height: 100vh ;
 }
 #errorMsg{

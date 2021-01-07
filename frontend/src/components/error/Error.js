@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 const Error = () => {
 
   return (
-    <Grid container xs={10} spacing={0}>
+    
       <div className="error" >
         <div className="hh">
           <div id="errorMsg">
@@ -15,7 +15,6 @@ const Error = () => {
         </div>
 
       </div>
-    </Grid>
   );
 }
 

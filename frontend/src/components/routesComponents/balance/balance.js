@@ -5,9 +5,11 @@ class Balance extends Component {
 
     render() {
         return (
+            
             <Grid container xs={12} spacing={0}>
                 ruta de balance
             </Grid>
+            
         )
     }
 }

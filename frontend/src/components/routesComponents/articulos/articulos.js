@@ -5,9 +5,11 @@ class Articulos extends Component {
 
     render() {
         return (
+            
             <Grid container xs={12} spacing={0}>
                 rutas de articulos
             </Grid>
+            
         )
     }
 }
