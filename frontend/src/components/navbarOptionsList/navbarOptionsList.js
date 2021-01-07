@@ -79,6 +79,17 @@ export default function ListRouter() {
 
           <ListItemLink to="/drafts" primary="Drafts" icon={<DraftsIcon />} />
           <Divider />
+          <br/>
+          <br/>
+          <Divider />
+          <ListItemLink to="/v" primary="Cosas Vale" icon={<FormatListNumberedRtlIcon />} />
+          <Divider component="li" variant="inset" />
+
+          <ListItemLink to="/n" primary="Cosas Nico" icon={<BarChartIcon />} />
+          <Divider component="li" variant="inset" />
+
+          <ListItemLink to="/a" primary="Cosas Arian" icon={<DraftsIcon />} />
+          <Divider />
 
         </List>
       </Paper>
