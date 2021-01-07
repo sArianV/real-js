@@ -8,7 +8,7 @@ export default function BodyContent() {
     
   
     return (
-        <Grid container xs={10} spacing={0}>
+        <Grid container spacing={0}>
             <Test />
         </Grid>
     );

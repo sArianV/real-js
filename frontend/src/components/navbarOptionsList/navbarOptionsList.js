@@ -1,10 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import Paper from '@material-ui/core/Paper';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import InboxIcon from '@material-ui/icons/Inbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import Typography from '@material-ui/core/Typography';
+import { Route, MemoryRouter } from 'react-router';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 //importar iconos
 import ReceiptIcon from '@material-ui/icons/Receipt';
@@ -13,88 +21,88 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import ListIcon from '@material-ui/icons/List';
 import FormatListNumberedRtlIcon from '@material-ui/icons/FormatListNumberedRtl';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    backgroundColor: theme.palette.background.transparent,
-  },
-}));
 
 function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
+  const { icon, primary, to } = props;
+
+  const renderLink = React.useMemo(
+    () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
+    [to],
+  );
+
+  return (
+    <li>
+      <ListItem button component={renderLink}>
+        {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
+        <ListItemText primary={primary} />
+      </ListItem>
+    </li>
+  );
 }
 
-export default function SimpleList() {
-    const classes = useStyles();
+ListItemLink.propTypes = {
+  icon: PropTypes.element,
+  primary: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+};
 
-    return (
-        <div className={classes.root} >
-            <List component="nav" aria-label="main mailbox folders">
+const useStyles = makeStyles({
+  root: {
+    width: "100%",
+  },
+});
+
+export default function ListRouter() {
+  const classes = useStyles();
+
+  return (
+    <MemoryRouter initialEntries={['/']} initialIndex={0}>
+      <div className={classes.root}>
+        <Route>
+          {({ location }) => (
+            <Typography gutterBottom>Current route: {location.pathname}</Typography>
+          )}
+        </Route>
+        <Paper elevation={0}>
+          <List aria-label="main mailbox folders">
+          <ListItemLink primary="Caja" to="/caja" icon={<ShoppingCartIcon/>} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/ultimas-ventas" primary="Ultimas Ventas" icon={<ReceiptIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/articulos" primary="Articulos" icon={<ListIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/stock" primary="Stock" icon={<FormatListNumberedRtlIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/balance" primary="Balance" icon={<BarChartIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/drafts" primary="Drafts" icon={<DraftsIcon />} />
             <Divider />
-
-                <ListItem button>
-                    <ListItemIcon>
-                        <ShoppingCartIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Caja" />
-                </ListItem>
-
-                <Divider component="li" variant="inset" />
-                <ListItem button>
-                    <ListItemIcon>
-                        <ReceiptIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Ultimas ventas" />
-                </ListItem>
-
-                <Divider component="li" variant="inset" />
-                <ListItem button>
-                    <ListItemIcon>
-                        <ListIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Articulos" />
-                </ListItem>
-                
-                <Divider component="li" variant="inset" />
-                <ListItem button>
-                    <ListItemIcon>
-                        <FormatListNumberedRtlIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Stock" />
-                </ListItem>
-                
-                
-                <Divider component="li" variant="inset" />
-                <ListItem button>
-                    <ListItemIcon>
-                        <BarChartIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Balance" />
-                </ListItem>
-                <Divider />
-           
-            </List>
-            
-            
-        </div>
-    );
+          </List>
+        </Paper>
+      </div>
+    </MemoryRouter>
+  );
 }
 
-/*class ArticlesMenuOptions extends Component {
-    render() {
-        return(
-            <ul>
-                <li>
-                    Listar Articulos 
-                </li>
-                <li>
-                    Buscar Articulo 
-                </li>
-                <li>
-                    Borrar Articulo 
-                </li>
-            </ul>
-        )
-    }
-}
-export default ArticlesMenuOptions;*/
+
+{/*
+//importar iconos
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import BarChartIcon from '@material-ui/icons/BarChart';
+import ListIcon from '@material-ui/icons/List';
+import FormatListNumberedRtlIcon from '@material-ui/icons/FormatListNumberedRtl';
+
+              <ListItemLink primary="Caja" to="/caja" icon={<ShoppingCartIcon/>} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/ultimas-ventas" primary="Ultimas Ventas" icon={<ReceiptIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/articulos" primary="Articulos" icon={<ListIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/stock" primary="Stock" icon={<FormatListNumberedRtlIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/balance" primary="Balance" icon={<BarChartIcon />} />
+            <Divider component="li" variant="inset" />
+            <ListItemLink to="/drafts" primary="Drafts" icon={<DraftsIcon />} />
+            <Divider />
+*/}

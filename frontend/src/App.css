@@ -31,3 +31,12 @@
 .App-link {
   color: #049e9e;
 }
+
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

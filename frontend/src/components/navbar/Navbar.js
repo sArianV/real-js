@@ -11,7 +11,7 @@ class Navbar extends Component {
     render() {
         return (
 
-            <Grid item xs={2} className="navbar nomargin">
+            <Grid container xs={12} spacing={0}>
                 <Paper elevation={3} className="navbar" >
 
 
@@ -25,7 +25,7 @@ class Navbar extends Component {
                     <Exit />
 
                 </Paper>
-            </Grid>
+                </Grid>
 
 
         )
