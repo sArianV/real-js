@@ -5,4 +5,6 @@ const sequelize = new Sequelize({
     storage: './db/basedatos.sqlite'
 })
 
-console.log(sequelize)
+console.log("Base de datos iniciada");
+
+export default sequelize;
