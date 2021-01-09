@@ -2,35 +2,28 @@
 const { Sequelize, DataTypes } = require('sequelize')
 
 module.exports = (sequelize) => {
-    var Order = sequelize.define('Order', {
+    var OrderItem = sequelize.define('OrderItem', {
         OrderId: {
             type: DataTypes.UUID,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false,
         },
-        OrderNumber: {
-            type: DataTypes.STRING(10),
-            unique: true,
+        barcode_1: {
+            type: DataTypes.STRING(45),
+            allowNull: false,
+            primaryKey: true
         },
-        CustomerId: {
+        UnitPrice: {
+            type: DataTypes.DOUBLE(12,2),
+            allowNull: false,
+        },
+        Quantity: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        OrderDate: {
-            type: DataTypes.DATE,
-            default: DATE.now
-        },
-        TotalPrice: {
-            type: DataTypes.DOUBLE(12,2),
-            allowNull: false,
-        },
-        TotalPay: {
-            type: DataTypes.DOUBLE(12,2),
-            allowNull: false,
+            allowNull: false
         }
         }, 
             { sequelize, modelName: 'Order' }
         )
-    return Order
+    return OrderItem
 }
