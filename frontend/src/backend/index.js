@@ -8,9 +8,10 @@ const sequelize = new Sequelize({
 
 const modelDefiners = [
 	require('./models/customer.model'),
-	require('./models/sale.model'),
+	require('./models/order.model'),
 	require('./models/supplier.model'),
-	// Add more models here...
+	require('./models/orderItem.model'),
+	require('./models/product.model'),
 ];
 
 // We define all models according to their files.
