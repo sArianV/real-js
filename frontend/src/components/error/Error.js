@@ -9,7 +9,7 @@ const Error = () => {
         <div className="hh">
           <div id="errorMsg">
             <h2>Pagina no encontrada</h2>
-            <h3>La pagina a la que intentas acceder no existe :( </h3>
+            <h3>La pagina a la que intentas acceder no existe &#128514;</h3>
           </div>
 
         </div>
