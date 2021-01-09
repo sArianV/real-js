@@ -7,8 +7,8 @@ function applyExtraSetup(sequelize) {
 	customer.belongs(order);
 	orderItem.hasMany(order);
 	order.belongs(orderItem);
-	orderItem.hasMany(product);
-	product.belongs(orderItem);
+	product.hasMany(orderItem);
+	orderItem.belongs(product);
 
 }
 //https://github.com/sequelize/express-example/tree/master/express-main-example/sequelize
