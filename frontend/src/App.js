@@ -9,7 +9,6 @@ import Router from './components/Router'
 
 require('pretty-error').start();
 
-
 function App() {
   return (
     <Router />
