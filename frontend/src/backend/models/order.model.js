@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         OrderNumber: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(10),
             unique: true,
         },
         CustomerId: {
@@ -34,13 +34,3 @@ module.exports = (sequelize) => {
         )
     return Order
 }
-/* `OrderId`     int NOT NULL AUTO_INCREMENT ,
- `OrderNumber` varchar(10) NULL ,
- `CustomerId`  int NOT NULL ,
- `OrderDate`   datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ,
- `TotalPrice`  decimal(12,2) NOT NULL ,
- `TotalPay`    decimal(12,2) NOT NULL ,
-   PRIMARY KEY (`OrderId`),
-  UNIQUE KEY `AK1_Order_OrderNumber` (`OrderNumber`),
-  KEY `FK_Order_CustomerId_Customer` (`CustomerId`),
-  CONSTRAINT `FK_Order_CustomerId_Customer` FOREIGN KEY `FK_Order_CustomerId_Customer` (`CustomerId`) REFERENCES `Customer` (`CustomerId`)
