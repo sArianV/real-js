@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-//const { applyExtraSetup } = require('./extra-setup');
+const { applyExtraSetup } = require('./extra-setup');
 
 const sequelize = new Sequelize({
     dialect: 'sqlite',
