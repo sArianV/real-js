@@ -6,9 +6,6 @@ import '@fontsource/roboto';
 //import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Router from './components/Router'
 
-
-require('pretty-error').start();
-
 function App() {
   return (
     <Router />

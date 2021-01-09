@@ -1,5 +1,6 @@
-'use strict'
-const { DataTypes } = require('sequelize')
+const {
+    DataTypes
+} = require('sequelize')
 
 module.exports = (sequelize) => {
     var Order = sequelize.define('Order', {
@@ -23,15 +24,16 @@ module.exports = (sequelize) => {
             default: sequelize.DATE
         },
         TotalPrice: {
-            type: DataTypes.DOUBLE(12,2),
+            type: DataTypes.DOUBLE(12, 2),
             allowNull: false,
         },
         TotalPay: {
-            type: DataTypes.DOUBLE(12,2),
+            type: DataTypes.DOUBLE(12, 2),
             allowNull: false,
         }
-        }, 
-            { sequelize, modelName: 'Order' }
-        )
+    }, {
+        sequelize,
+        modelName: 'Order'
+    })
     return Order
 }

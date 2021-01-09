@@ -1,9 +1,13 @@
-const { Sequelize } = require('sequelize');
-const { applyExtraSetup } = require('./extra-setup');
+const {
+	Sequelize
+} = require('sequelize');
+const {
+	applyExtraSetup
+} = require('./extra-setup');
 
 const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './db/basedatos.sqlite'
+	dialect: 'sqlite',
+	storage: './db/basedatos.sqlite'
 })
 
 const modelDefiners = [

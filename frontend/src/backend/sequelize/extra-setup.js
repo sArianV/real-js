@@ -1,7 +1,12 @@
-
 function applyExtraSetup(sequelize) {
-	const { Customer, Product, OrderItem, Supplier, Order } = sequelize.models;
-	
+	const {
+		Customer,
+		Product,
+		OrderItem,
+		Supplier,
+		Order
+	} = sequelize.models;
+
 	Supplier.hasMany(Product);
 	Product.belongsTo(Supplier);
 
@@ -16,4 +21,6 @@ function applyExtraSetup(sequelize) {
 
 }
 //https://github.com/sequelize/express-example/tree/master/express-main-example/sequelize
-module.exports = { applyExtraSetup };
+module.exports = {
+	applyExtraSetup
+};

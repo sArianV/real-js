@@ -1,5 +1,6 @@
-'use strict';
-const { DataTypes } = require('sequelize')
+const {
+  DataTypes
+} = require('sequelize')
 module.exports = (sequelize) => {
   var Customer = sequelize.define('Customer', {
     CustomerId: {
@@ -13,6 +14,9 @@ module.exports = (sequelize) => {
       unique: true,
     },
     Phone: DataTypes.STRING
-  }, {sequelize, modelName: 'Customer'});
+  }, {
+    sequelize,
+    modelName: 'Customer'
+  });
   return Customer
 };
