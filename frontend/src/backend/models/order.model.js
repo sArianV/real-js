@@ -4,7 +4,7 @@ const { Sequelize, DataTypes } = require('sequelize')
 module.exports = (sequelize) => {
     var Order = sequelize.define('Order', {
         OrderId: {
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false,
@@ -14,18 +14,19 @@ module.exports = (sequelize) => {
             unique: true,
         },
         CustomerId: {
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             allowNull: false,
-        }
+        },
         OrderDate: {
-            //todo
-        }
-        TotalPrice{
-            type://decimal(12,2),
+            type: DataTypes.DATE,
+            default: DATE.now
+        },
+        TotalPrice: {
+            type: DataTypes.DOUBLE(12,2),
             allowNull: false,
-        }
-        TotalPay{
-            type://decimal(12,2),
+        },
+        TotalPay: {
+            type: DataTypes.DOUBLE(12,2),
             allowNull: false,
         }
         }, 
