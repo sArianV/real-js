@@ -12,6 +12,7 @@ import Balance from './routesComponents/balance/balance';
 import A from './routesComponents/arian/a';
 import N from './routesComponents/nico/n';
 import V from './routesComponents/vale/v';
+import Agus from './routesComponents/agus/ag';
 import Grid from '@material-ui/core/Grid';
 import Navbar from './navbar/Navbar';
 class Router extends Component {
@@ -31,6 +32,7 @@ class Router extends Component {
                             <Route exact path='/stock' component={Stock} />
                             <Route exact path='/balance' component={Balance} />
                             <Route exact path='/a' component={A} />
+                            <Route exact path='/agus' component={Agus} />
                             <Route exact path='/n' component={N} />
                             <Route exact path='/v' component={V} />
                             <Route component={Error} />
