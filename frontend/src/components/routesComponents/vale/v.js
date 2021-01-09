@@ -7,7 +7,7 @@ class V extends Component {
         return (
             
             <Grid container xs={12} spacing={0}>
-                ruta de vale
+                ruta de vale, para probar componentes
             </Grid>
             
         )
