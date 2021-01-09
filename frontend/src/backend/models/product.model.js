@@ -1,11 +1,12 @@
 'use strict'
+const { Sequelize, DataTypes } = require('sequelize')
 
 module.exports = (sequelize) => {
     var Product = sequelize.define('Product', {
         barcode_1: {
             type: DataTypes.STRING(45),
             primaryKey: true,
-            allowNull: false,
+            allowNull: true,
         },
         ProductName: {
             type: DataTypes.STRING(50),
@@ -28,24 +29,25 @@ module.exports = (sequelize) => {
         Category: {
             type: DataTypes.STRING(50),
             unique: true,
-        }
-        stock{
+        },
+        stock:{
             type: DataTypes.INTEGER,
             unique: true,
-        }
-        expire_date{
+        },
+        expire_date:{
             type: DataTypes.DATE,
             unique: true,
-        }
-        buy_date{
+        },
+        buy_date:{
             type: DataTypes.DATE,
             unique: true,
-        }
-        trademark{
+        },
+        trademark:{
             type: DataTypes.STRING(45),
             unique: true,
-        }
-        total_profit{
+        },
+        total_profit:{
+            type: DataTypes.TEXT,
             unique: true,
         }
         }, 

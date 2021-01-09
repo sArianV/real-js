@@ -1,18 +1,18 @@
 
 function applyExtraSetup(sequelize) {
-	const { customer, product, orderItem, supplier,order } = sequelize.models;
+	const { Customer, Product, OrderItem, Supplier, Order } = sequelize.models;
 	
-	product.hasMany(supplier);
-	supplier.belongs(product);
+	Supplier.hasMany(Product);
+	Product.belongsTo(Supplier);
 
-	order.hasMany(customer);
-	customer.belongs(order);
+	Customer.hasMany(Order);
+	Order.belongsTo(Customer);
 
-	orderItem.hasMany(order);
-	order.belongs(orderItem);
-	
-	product.hasMany(orderItem);
-	orderItem.belongs(product);
+	OrderItem.hasMany(Order);
+	Order.hasMany(OrderItem);
+
+	Product.hasMany(OrderItem);
+	OrderItem.hasMany(Product);
 
 }
 //https://github.com/sequelize/express-example/tree/master/express-main-example/sequelize
