@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './error.css';
-import Grid from '@material-ui/core/Grid';
 const Error = () => {
 
   return (

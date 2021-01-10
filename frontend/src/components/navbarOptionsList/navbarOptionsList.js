@@ -100,7 +100,7 @@ export default function ListRouter() {
 }
 
 
-{/*
+/*{
 //importar iconos
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -120,4 +120,4 @@ import FormatListNumberedRtlIcon from '@material-ui/icons/FormatListNumberedRtl'
             <Divider component="li" variant="inset" />
             <ListItemLink to="/drafts" primary="Drafts" icon={<DraftsIcon />} />
             <Divider />
-*/}
+}*/

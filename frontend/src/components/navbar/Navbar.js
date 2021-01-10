@@ -4,7 +4,7 @@ import './navbar.css';
 import ArticlesMenu from '../navbarOptionsList/navbarOptionsList';
 import Grid from '@material-ui/core/Grid';
 import Exit from '../exitButton/closeSessionButton'
-import {NavLink} from 'react-router-dom'
+
 class Navbar extends Component {
 
     render() {

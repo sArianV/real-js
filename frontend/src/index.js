@@ -4,11 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-console.log("index.js")
-
 require('pretty-error').start();
 
-const sequelize = require('./backend/sequelize');
+/*const sequelize = require('./backend/sequelize');
 
 async function assertDatabaseConnectionOk() {
 	console.log(`Checking database connection...`);
@@ -28,7 +26,7 @@ async function init() {
 }
 
 init();
-
+*/
 ReactDOM.render(
   <React.StrictMode>
     <App />

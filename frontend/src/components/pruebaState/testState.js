@@ -1,4 +1,3 @@
-import { Divider } from '@material-ui/core';
 import React, {Component} from 'react';
 import './style.css'
 class testState extends Component{
