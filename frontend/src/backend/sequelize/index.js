@@ -7,7 +7,7 @@ const {
 
 const sequelize = new Sequelize({
 	dialect: 'sqlite',
-//	dialectModule: 'sqlite',
+	dialectModule: 'sqlite',
 	storage: './db/basedatos.sqlite'
 })
 

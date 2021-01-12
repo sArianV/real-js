@@ -6,3 +6,4 @@ frontend\.eslintcache
 .eslintcache
 *.eslintcache
 .env
+/frontend/db
