@@ -4,13 +4,13 @@ const {
 
 module.exports = (sequelize) => {
     var OrderItem = sequelize.define('OrderItem', {
-        OrderId: {
-            type: DataTypes.UUID,
+        OrderItemId: {
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false,
         },
-        barcode_1: {
+        Barcode: {
             type: DataTypes.STRING(45),
             allowNull: false,
             primaryKey: true
@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
         }
     }, {
         sequelize,
-        modelName: 'Order'
+        modelName: 'OrderItem'
     })
     return OrderItem
 }

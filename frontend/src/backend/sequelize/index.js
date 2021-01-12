@@ -21,12 +21,9 @@ const modelDefiners = [
 
 // We define all models according to their files.
 for (let modelDefiner of modelDefiners) {
-	console.log(modelDefiner(sequelize));
-	console.log("---------------------")
+	modelDefiner(sequelize)
 }
 
 applyExtraSetup(sequelize);
-
-console.log("Base de datos iniciada");
 
 module.exports = sequelize;

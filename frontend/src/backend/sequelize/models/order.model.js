@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize) => {
     var Order = sequelize.define('Order', {
         OrderId: {
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false,

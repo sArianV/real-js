@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize) => {
   var Supplier = sequelize.define('Supplier', {
     SupplierId: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
       allowNull: false,
