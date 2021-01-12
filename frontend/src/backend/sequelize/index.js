@@ -7,7 +7,7 @@ const {
 
 const sequelize = new Sequelize({
 	dialect: 'sqlite',
-	dialectModule: 'sqlite',
+//	dialectModule: 'sqlite',
 	storage: './db/basedatos.sqlite'
 })
 
@@ -21,7 +21,8 @@ const modelDefiners = [
 
 // We define all models according to their files.
 for (let modelDefiner of modelDefiners) {
-	modelDefiner(sequelize);
+	console.log(modelDefiner(sequelize));
+	console.log("---------------------")
 }
 
 applyExtraSetup(sequelize);
