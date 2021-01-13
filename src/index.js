@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-const sequelize = require('./backend/sequelize/index');
+/*const sequelize = require('./backend/sequelize/index');
 
 async function assertDatabaseConnectionOk() {
 	console.log(`Checking database connection...`);
@@ -23,7 +23,7 @@ async function init() {
 
 }
 
-init();
+init();*/
 
 ReactDOM.render(
   <React.StrictMode>
