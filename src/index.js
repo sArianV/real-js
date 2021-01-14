@@ -24,7 +24,10 @@ async function init() {
 }
 
 init();*/
+
+//aca testeo la db  en el frontend levantando react
 dbLite.test();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
