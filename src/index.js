@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+let dbLite = require('./testDB');
 
 /*const sequelize = require('./backend/sequelize/index');
 
@@ -24,7 +24,7 @@ async function init() {
 }
 
 init();*/
-
+dbLite.test();
 ReactDOM.render(
   <React.StrictMode>
     <App />
