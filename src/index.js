@@ -5,26 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-/*const sequelize = require('./backend/sequelize/index');
-
-async function assertDatabaseConnectionOk() {
-	console.log(`Checking database connection...`);
-	try {
-		await sequelize.authenticate();
-		console.log('Database connection OK!');
-	} catch (error) {
-		console.log('Unable to connect to the database:');
-		console.log(error.message);
-	}
-}
-
-async function init() {
-	await assertDatabaseConnectionOk();
-
-}
-
-init();*/
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
