@@ -1,37 +1,29 @@
 const { ipcMain } = require('electron');
-const sequelize = require('./../backend/sequelize');
-
-console.log("Mesage controll main")
-
-async function assertDatabaseConnectionOk() {
-	console.log(`Checking database connection...`);
-	try {
-		await sequelize.authenticate();
-		console.log('Database connection OK!');
-	} catch (error) {
-		console.log('Unable to connect to the database:');
-		console.log(error.message);
-	}
-}
-
-async function init() {
-	await assertDatabaseConnectionOk();
-}
-
-async function test(){
-	console.log("test")
-	await sequelize.sync({ force: true });
-	const jane = await sequelize.models.Supplier.create({ CompanyName: "Lo de carlitos"});
-	console.log("Jane's auto-generated ID:", jane.id);
-	console.log(jane.save());
-}
+const god = require('./../backend/God');
+const supplierController = require('./../backend/controllers/supplier')
+const Codes = require('./MessajeConst');
 
 ipcMain.on('asynchronous-message', (event, arg) => {
-    console.log("*** Mensaje")
-    const sql = arg;
-    const eve = event;
-    console.log(eve);
-    console.log("------------------")
-    console.log(sql);
-    test()
+	console.log("recibio mensaje")
+	var result
+	switch (arg.code) {
+		case Codes.HOLA:
+			result = god.hola(arg.param);
+			break;
+		case Codes.GUARDAR_USUARIO:
+			result = await controladorUsuario.guardar(param)
+			console.log("asd");
+			break;
+		case Codes.SAVE_SUPPLIER:
+			result = await supplierController.save(param)
+			console.log("Save_supplier");
+			break;
+		default:
+			console.log("default")
+			console.log(arg);
+			break;
+	}
+	
+	event.reply('asynchronous-reply', result);
 });
+ 

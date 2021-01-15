@@ -24,8 +24,10 @@ function App() {
     const [message, setMessage] = useState('SELECT * FROM repositories');
     const [response, setResponse] = useState();
 
+    const code = require('./message-control/MessajeConst')
+
     function send(sql) {
-        sendAsync(sql).then((result) => setResponse(result));
+        sendAsync({code:code.OBTENER_PRODUCTO, param:{id:10, nombre:"juan"}}).then((result) => setResponse(result));
     }
 
     return (
