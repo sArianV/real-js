@@ -20,8 +20,8 @@ async function init() {
 
 async function test(){
 	console.log("test")
-	await sequelize.sync({ force: true });
-	const jane = await sequelize.models.Supplier.create({ CompanyName: "Lo de carlitos"});
+	await sequelize.sync();
+	const jane = await sequelize.models.Supplier.create({ CompanyName: "Lo de os"});
 	console.log("Jane's auto-generated ID:", jane.id);
 	console.log(jane.save());
 }

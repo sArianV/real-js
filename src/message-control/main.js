@@ -18,10 +18,10 @@ async function init() {
 	await assertDatabaseConnectionOk();
 }
 
-async function test(){
+async function test(name){
 	console.log("test")
-	await sequelize.sync({ force: true });
-	const jane = await sequelize.models.Supplier.create({ CompanyName: "Lo de carlitos"});
+	await sequelize.sync();
+	const jane = await sequelize.models.Supplier.create({ CompanyName: name });
 	console.log("Jane's auto-generated ID:", jane.id);
 	console.log(jane.save());
 }
@@ -33,5 +33,5 @@ ipcMain.on('asynchronous-message', (event, arg) => {
     console.log(eve);
     console.log("------------------")
     console.log(sql);
-    test()
+    test(sql)
 });
