@@ -15,7 +15,7 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 			console.log("asd");
 			break;
 		case Codes.SAVE_SUPPLIER:
-			result = await supplierController.save(param)
+			result = supplierController.save(param)
 			console.log("Save_supplier");
 			break;
 		default:
