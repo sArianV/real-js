@@ -13,18 +13,16 @@ function send(param) {
 
 
 class A extends Component {
-    state = {
-        product:{
-            barcode_1:"-1",
-            ProductName:"yogurt vencido",
-            SupplierId:"un chino",
-            BasePrice:"50",
-            Price:"75",
-            Category:"46",
-            Stock:"4564",
-            trademark:"564598"
-        }
-      }
+    state = {      
+      barcode_1:"-1",
+      ProductName:"yogurt vencido",
+      SupplierId:"un chino",
+      BasePrice:"50",
+      Price:"75",
+      Category:"46",
+      Stock:"4564",
+      trademark:"564598"        
+    }
       handleChange = (e) => {
         console.log(e.target.id, e.target.value);
         this.setState({
@@ -33,8 +31,8 @@ class A extends Component {
       }
       handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.product);
-        send(this.state.product)
+        console.log(this.state);
+        send(this.state)
       }
     render() {
         /**/
