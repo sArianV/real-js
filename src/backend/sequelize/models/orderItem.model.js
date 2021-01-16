@@ -10,10 +10,10 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
 
-        //el allownull=false en codigo de barras mepa que no va , 
-        //sino como cobran algo sin codigo? como una tira de pan o caramelos 
+        
         Barcode: {
             type: DataTypes.STRING(45),
+            default: "-1",
             allowNull: false,
             primaryKey: true
         },
