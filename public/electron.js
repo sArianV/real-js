@@ -1,5 +1,5 @@
 const electron = require('electron');
-
+const sequelize = require('../src/backend/sequelize')
 require('../src/message-control/main');
 
 const { app, BrowserWindow } = electron;
@@ -12,6 +12,7 @@ const isDev = require('electron-is-dev');
 let mainWindow;
 
 function createWindow() {
+  sequelize.sync();
   mainWindow = new BrowserWindow({
     width: 1400, 
     height: 680,

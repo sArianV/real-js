@@ -5,17 +5,18 @@ const Codes = require('./MessajeConst');
 
 ipcMain.on('asynchronous-message', (event, arg) => {
 	console.log("recibio mensaje")
+	var param = arg.param;
 	var result
 	switch (arg.code) {
 		case Codes.HOLA:
-			result = god.hola(arg.param);
+			result = god.hola(param);
 			break;
 		case Codes.GUARDAR_USUARIO:
-			result = await controladorUsuario.guardar(param)
+			result = controladorUsuario.guardar(param)
 			console.log("asd");
 			break;
 		case Codes.SAVE_SUPPLIER:
-			result = supplierController.save(param)
+			supplierController.save(param)
 			console.log("Save_supplier");
 			break;
 		default:

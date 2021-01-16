@@ -2,6 +2,8 @@ const sequelize = require("../../sequelize");
 var validator = require('validator');
 
 module.exports = async ({CompanyName, Phone}) => {
+    console.log(CompanyName);
+    console.log(Phone);
     try {
         var isValid = true;
         isValid = isValid && !validator.isEmpty(CompanyName);
@@ -9,10 +11,11 @@ module.exports = async ({CompanyName, Phone}) => {
         return false;
     }
     if (isValid) {
-        await sequelize.sync();
-	    const jane = await sequelize.models.Supplier.create({ CompanyName, Phone});
-        await jane.save();
-        return true
+        try {
+            const jane = await sequelize.models.Supplier.create({ CompanyName, Phone});
+            await jane.save();
+            return true
+        }catch{return false;}
     } else {
         return false;
     }
