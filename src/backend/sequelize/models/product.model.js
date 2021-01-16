@@ -9,6 +9,7 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(45),
             primaryKey: true,
             allowNull: true,
+            default: -1,
         },
         ProductName: {
             type: DataTypes.STRING(50),
