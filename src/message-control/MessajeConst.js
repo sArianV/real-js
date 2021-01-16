@@ -1,5 +1,10 @@
 module.exports = {
     HOLA: 1,
     GUARDAR_USUARIO: 2,
+    SAVE_CUSTOMER: 10,
+    SAVE_ORDER:20,
+    SAVE_ORDERITEM:30,
+    SAVE_PRODUCT:100,
     SAVE_SUPPLIER: 77,
+
 }

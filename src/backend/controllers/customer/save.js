@@ -9,10 +9,11 @@ module.exports = async ({CustomerName, Phone}) => {
         return false;
     }
     if (isValid) {
-        await sequelize.sync();
-	    const customer = await sequelize.models.Customer.create({ CustomerName, Phone});
-        await customer.save();
-        return true
+        try{
+            const customer = await sequelize.models.Customer.create({ CustomerName, Phone});
+            await customer.save();
+            return true
+        }catch{return false;}
     } else {
         return false;
     }

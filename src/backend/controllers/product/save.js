@@ -9,10 +9,11 @@ module.exports = async ({barcode_1, ProductName, SupplierId, BasePrice , Price, 
         return false;
     }
     if (isValid) {
-        await sequelize.sync();
-	    const product = await sequelize.models.Product.create({barcode_1, ProductName, SupplierId, BasePrice , Price, Category, stock, expire_date, buy_date, trademark, total_profit });
-        await product.save();
-        return true
+        try{
+            const product = await sequelize.models.Product.create({barcode_1, ProductName, SupplierId, BasePrice , Price, Category, stock, expire_date, buy_date, trademark, total_profit });
+            await product.save();
+            return true
+        }catch{return false;}
     } else {
         return false;
     }

@@ -27,7 +27,7 @@ function App() {
     const code = require('./message-control/MessajeConst')
 
     function send(sql) {
-        sendAsync({code:code.SAVE_SUPPLIER, param:{CompanyName:"Lurto" , Phone:"45646" }}).then((result) => setResponse(result));
+        sendAsync({code:code.SAVE_PRODUCT, param:{ProductName:"Manaos" , SupplierId:"das46", trademark:"46532161" }}).then((result) => setResponse(result));
     }
 
     return (

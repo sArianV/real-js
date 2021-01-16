@@ -9,10 +9,11 @@ module.exports = async ({OrderItemID, Barcode, UnitPrice, Quantity}) => {
         return false;
     }
     if (isValid) {
-        await sequelize.sync();
-	    const orderItem = await sequelize.models.Supplier.create({OrderItemID, Barcode, UnitPrice, Quantity});
-        await orderItem.save();
-        return true
+        try{
+            const orderItem = await sequelize.models.Supplier.create({OrderItemID, Barcode, UnitPrice, Quantity});
+            await orderItem.save();
+            return true
+        }catch{return false;}
     } else {
         return false;
     }
