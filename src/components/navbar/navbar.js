@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Container, Divider, List, ListItem, Paper, ListItemIcon, ListItemText} from '@material-ui/core';
+import { Divider, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
+import {makeStyles} from '@material-ui/core/styles'
 
 
 //importar iconos
@@ -11,6 +12,16 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import ListIcon from '@material-ui/icons/List';
 import FormatListNumberedRtlIcon from '@material-ui/icons/FormatListNumberedRtl';
+
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+
+  toolbar: theme.mixins.toolbar,
+  drawerPaper: {
+    width: drawerWidth,
+  },
+}));
 
 
 function ListItemLink(props) {
@@ -38,12 +49,14 @@ ListItemLink.propTypes = {
   to: PropTypes.string.isRequired,
 };
 
-export default function ListRouter() {
+export default function Navbar() {
+
+  const classes = useStyles();
 
   return (
-    <Container >
-      <Paper elevation={0}>
-        <Divider />
+    <div>
+    <div className={classes.toolbar} />
+    <Divider />
         <List aria-label="main mailbox folders">
 
           <ListItemLink primary="Caja" to="/" icon={<ShoppingCartIcon />} />
@@ -61,7 +74,6 @@ export default function ListRouter() {
           <ListItemLink to="/cargaProducto" primary="Cargar Producto" icon={<DraftsIcon />} />
           
         </List>
-      </Paper>
-    </Container>
+        </div>
   );
 }
