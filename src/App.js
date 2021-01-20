@@ -1,18 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
-//componentes 
-import Caja from './components/routesComponents/caja/caja';
+import Caja from './components/routesComponents/caja/caja';	
 import UltimasVentas from './components/routesComponents/ultimasVentas/ultimasVentas';
-import Articulos from './components/routesComponents/articulos/articulos';
-import Stock from './components/routesComponents/stock/stock';
-import Balance from './components/routesComponents/balance/balance';
-import CargaProducto from './components/routesComponents/cargaProducto/CargaProducto';
-import Grid from '@material-ui/core/Grid';
+import Articulos from './components/routesComponents/articulos/articulos';	
+import Stock from './components/routesComponents/stock/stock';	
+import Balance from './components/routesComponents/balance/balance';	
+import CargaProducto from './components/routesComponents/cargaProducto/CargaProducto';	
+import Grid from '@material-ui/core/Grid';	
 import HNavbar from './components/h-navbar/h-navbar';
 
-import './App.css';
-
+import './App.css';	
 function App() {
 
     return (
@@ -35,5 +32,4 @@ function App() {
         </Grid>
     );
 }
-
 export default App;
