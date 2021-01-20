@@ -1,0 +1,11 @@
+.sizeBox{
+    
+    padding: 20px;
+    background-color: aliceblue !important;
+    width: 460px;
+    
+    border-radius: 16px;
+}
+#save-product-button{
+    left: 28%;
+}

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Grid, TextField } from "@material-ui/core";
 import sendAsync from "../../../message-control/renderer";
-const code = require("./../../../message-control/MessajeConst");
+import Button from '@material-ui/core/Button';
+import './CargaProducto.css'
 
+const code = require("./../../../message-control/MessajeConst");
 function send(param) {
   sendAsync({
     code: code.SAVE_PRODUCT,
@@ -13,8 +15,8 @@ function send(param) {
 class CargaProducto extends Component {
   state = {
     barcode_1: "-1",
-    ProductName: "yogurt vencido",
-    SupplierId: "default",
+    ProductName: "",
+    SupplierId: "",
   };
   handleChange = (e) => {
     console.log(e.target.id, e.target.value);
@@ -30,41 +32,39 @@ class CargaProducto extends Component {
   render() {
     /**/
     return (
-      <Grid item xs={6} spacing={2}>
+      <Grid item spacing={2} className="sizeBox">
         <form onSubmit={this.handleSubmit}>
-        <br/>
-        <br/>
-        <br/>
+        
           <div>
           <TextField
             variant="outlined"
             id="barcode_1"
-            label="Barcode"
-            defaultValue="00000000"
+            label="Codigo"
+            defaultValue=""
             onChange={this.handleChange}
           />
           <TextField
             variant="outlined"
             id="ProductName"
             label="Nombre del Producto"
-            defaultValue="Fideos"
+            defaultValue=""
             onChange={this.handleChange}
           />
           </div>
           <br/>
           <div>
+          <TextField
+          variant="outlined"
+          id="trademark"
+          label="Marca"
+          defaultValue=""
+          onChange={this.handleChange}
+          />
           <TextField
             variant="outlined"
             id="SupplierId"
             label="Proveedor"
-            defaultValue="00000000"
-            onChange={this.handleChange}
-          />
-          <TextField
-            variant="outlined"
-            id="BasePrice"
-            label="Precio Base"
-            defaultValue="5"
+            defaultValue=""
             onChange={this.handleChange}
           />
           </div>
@@ -72,18 +72,15 @@ class CargaProducto extends Component {
           <div>
           <TextField
             variant="outlined"
-            id="Price"
+            id="BasePrice"
+            label="Precio Lista"
             onChange={this.handleChange}
-            label="Helper text"
-            defaultValue="Default Value"
-            helperText="Some important text"
           />
           <TextField
             variant="outlined"
-            id="Category"
-            label="Categoria"
-            defaultValue="ninguna"
+            id="Price"
             onChange={this.handleChange}
+            label="Precio Venta"
           />
           </div>
           <br/>
@@ -91,15 +88,25 @@ class CargaProducto extends Component {
           <TextField
             variant="outlined"
             id="Stock"
+            label="Stock"
             onChange={this.handleChange}
           />
           <TextField
             variant="outlined"
-            id="trademark"
+            id="Category"
+            label="Categoria"            
             onChange={this.handleChange}
           />
+          
           </div>
-          <button>Submit</button>
+          <br/>
+          
+          <Button variant="contained" type="submit" color="secondary" id="save-product-button">
+            Guardar Producto
+          </Button>
+          {/*<button>Submit</button>*/}
+          
+          
         </form>
       </Grid>
     );
