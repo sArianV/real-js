@@ -1,0 +1,62 @@
+.nomargin {
+    margin: 0%;
+    padding: 0%;
+}
+.navbar{
+    height: 45px;
+    background-color: rgb(240, 227, 227);
+    width: 100%;
+    margin: 0px;
+    border-radius: 0% !important;
+    position: relative;
+}
+.section-name{
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px;
+}
+.sectionName  h1, h2, h3, h4, h5{
+    color:#212121 ;
+    margin-bottom: 2px;
+    padding-left: 8% !important;
+}
+.nomargin {
+    margin: 0%;
+    padding: 0%;
+    border: 0px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+#h-list {
+    display:flex;
+    flex-direction: row ;
+     
+     
+}
+
+#rightItems{
+    margin: 0%;
+    padding: 0%;
+    border: 0px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-self:flex-end;
+}
+/* Sobreescribo varias cosas de material */
+.MuiContainer-root {
+    padding:0px !important;
+}
+.MuiContainer-root {
+    max-width: 100vw !important;
+}
+.MuiList-padding{
+    padding: 0px !important;
+}
+.MuiListItemIcon-root{
+    min-width: 0px !important;
+}
+.MuiPaper-root{
+    background-color: rgb(77, 198, 202) !important;
+}

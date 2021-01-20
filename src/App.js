@@ -9,7 +9,7 @@ import Stock from './components/routesComponents/stock/stock';
 import Balance from './components/routesComponents/balance/balance';
 import CargaProducto from './components/routesComponents/cargaProducto/CargaProducto';
 import Grid from '@material-ui/core/Grid';
-import Navbar from './components/navbar/Navbar';
+import HNavbar from './components/h-navbar/h-navbar';
 
 import './App.css';
 
@@ -18,10 +18,10 @@ function App() {
     return (
         <Grid container spacing={0}>
             <BrowserRouter>
-                    <Grid item xs={2}>
-                        <Navbar />
+                    <Grid item xs={12}>
+                        <HNavbar />
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12} className="my-body">
                         <Switch>
                             <Route exact path='/' component={Caja} />
                             <Route exact path='/ultimasventas' component={UltimasVentas} />

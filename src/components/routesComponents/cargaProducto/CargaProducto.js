@@ -14,12 +14,7 @@ class CargaProducto extends Component {
   state = {
     barcode_1: "-1",
     ProductName: "yogurt vencido",
-    SupplierId: "un chino",
-    BasePrice: "50",
-    Price: "75",
-    Category: "46",
-    Stock: "4564",
-    trademark: "564598",
+    SupplierId: "default",
   };
   handleChange = (e) => {
     console.log(e.target.id, e.target.value);

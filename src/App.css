@@ -13,6 +13,15 @@
   background-color: #09d3ac;
 }
 
+.my-navbar{
+  height: 5vh !important;
+}
+.my-body{
+  height: calc(100vh - 45px);
+  max-height: calc(100vh - 45px);
+  background-color: burlywood;
+}
+
 .App-logo {
   height: 40vmin;
 }
