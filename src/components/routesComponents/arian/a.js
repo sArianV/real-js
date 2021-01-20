@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import sendAsync from '../../../message-control/renderer';
-import Button from '@material-ui/core/Button';
 const code = require('./../../../message-control/MessajeConst')
 
 function send(param) {

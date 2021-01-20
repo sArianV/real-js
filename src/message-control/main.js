@@ -1,5 +1,4 @@
 const { ipcMain } = require('electron');
-const god = require('./../backend/God');
 const customerController = require('./../backend/controllers/customer')
 const orderController = require('./../backend/controllers/order')
 const orderItemController = require('./../backend/controllers/orderItem')
@@ -8,7 +7,6 @@ const supplierController = require('./../backend/controllers/supplier')
 const Codes = require('./MessajeConst');
 
 ipcMain.on('asynchronous-message', (event, arg) => {
-	console.log("recibio mensaje")
 	var param = arg.param;
 	var result
 	switch (arg.code) {
@@ -16,7 +14,7 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 			customerController.save(param)
 			console.log("Save_Customer");
 			break;
-			case Codes.SAVE_ORDER:
+		case Codes.SAVE_ORDER:
 			orderController.save(param)
 			console.log("Save_order");
 			break;

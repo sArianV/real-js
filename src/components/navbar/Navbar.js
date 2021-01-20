@@ -1,40 +1,24 @@
-import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
-import './navbar.css';
-import ArticlesMenu from '../navbarOptionsList/navbarOptionsList';
-import Grid from '@material-ui/core/Grid';
-import Exit from '../exitButton/closeSessionButton'
+import React, { Component } from "react";
+import {Typography, Paper, Grid} from "@material-ui/core";
+import clases from "./navbar.module.css";
+import ArticlesMenu from "../navbarOptionsList/navbarOptionsList";
 
 class Navbar extends Component {
+  render() {
+    return (
+      <Grid item xs={12} >
+        <Paper elevation={3} className={clases.navbar}>
+          {/*}<div className = "logo-Area"></div>{*/}
 
-    render() {
-        return (
+          <Typography variant="h3"  gutterBottom>
+            Menu
+          </Typography>
 
-            <Grid container xs={12} spacing={0}>
-                <Paper elevation={3} className="navbar" >
-
-
-                    {/*}<div className = "logo-Area"></div>{*/}
-
-                    <div className="section-name">
-                        <h2>Menu</h2>
-                    </div>
-
-                    <ArticlesMenu />
-                   
-
-
-
-                    <Exit />
-
-                </Paper>
-                </Grid>
-
-
-        )
-    }
+          <ArticlesMenu />
+        </Paper>
+      </Grid>
+    );
+  }
 }
 
 export default Navbar;
-
-

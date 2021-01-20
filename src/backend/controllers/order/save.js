@@ -1,17 +1,18 @@
 const sequelize = require("../../sequelize");
 var validator = require('validator');
 
-module.exports = async ({OrderItemID, Barcode, UnitPrice, Quantity}) => {
+module.exports = async ({OrderNumber, CustomerId, OrderDate, TotalPrice, TotalPay}) => {
     try {
         var isValid = true;
-        isValid = isValid && !validator.isEmpty(OrderItemID) && !validator.isEmpty(Barcode) && !validator.isEmpty(UnitPrice) && !validator.isEmpty(Quantity);
+        isValid = isValid && !validator.isEmpty(CustomerId) && !validator.isEmpty(TotalPay);
     } catch (err) {
         return false;
     }
+    //TODO: Total price its calculable
     if (isValid) {
         try{
-            const orderItem = await sequelize.models.Supplier.create({OrderItemID, Barcode, UnitPrice, Quantity});
-            await orderItem.save();
+            const order = await sequelize.models.Order.create({OrderNumber, CustomerId, OrderDate, TotalPrice, TotalPay});
+            await order.save();
             return true
         }catch{return false;}
     } else {

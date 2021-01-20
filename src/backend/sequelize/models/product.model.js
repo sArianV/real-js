@@ -4,12 +4,13 @@ const {
 
 module.exports = (sequelize) => {
     var Product = sequelize.define('Product', {
-        // porque primaryKey y tambien puede ser null ?
+        id:{
+            type: DataTypes.UUID,
+            primaryKey: true
+        },
         barcode_1: {
             type: DataTypes.STRING(45),
-            primaryKey: true,
             allowNull: true,
-            default: -1,
         },
         ProductName: {
             type: DataTypes.STRING(50),

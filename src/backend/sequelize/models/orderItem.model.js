@@ -9,8 +9,6 @@ module.exports = (sequelize) => {
             primaryKey: true,
             allowNull: false,
         },
-
-        
         Barcode: {
             type: DataTypes.STRING(45),
             default: "-1",
