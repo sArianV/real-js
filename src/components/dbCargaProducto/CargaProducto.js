@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Grid, TextField } from "@material-ui/core";
-import sendAsync from "../../../message-control/renderer";
+import { Grid, Paper, TextField } from "@material-ui/core";
+import sendAsync from "../../message-control/renderer";
 import Button from '@material-ui/core/Button';
 import './CargaProducto.css'
 
-const code = require("./../../../message-control/MessajeConst");
+const code = require("../../message-control/MessajeConst");
 function send(param) {
   sendAsync({
     code: code.SAVE_PRODUCT,
@@ -32,7 +32,7 @@ class CargaProducto extends Component {
   render() {
     /**/
     return (
-      <Grid item spacing={2} className="sizeBox">
+      <Paper elevation={6} spacing={2} className="sizeBox">
         <form onSubmit={this.handleSubmit}>
         
           <div>
@@ -87,7 +87,7 @@ class CargaProducto extends Component {
           <div>
           <TextField
             variant="outlined"
-            id="Stock"
+            id="stock"
             label="Stock"
             onChange={this.handleChange}
           />
@@ -108,7 +108,7 @@ class CargaProducto extends Component {
           
           
         </form>
-      </Grid>
+      </Paper>
     );
   }
 }

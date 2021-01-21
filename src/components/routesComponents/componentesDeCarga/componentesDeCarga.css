@@ -1,0 +1,7 @@
+#test-de-carga{
+    display: flex;
+    flex-direction: row;
+}
+.unaCarga{
+    margin: 10px;
+}

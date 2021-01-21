@@ -4,9 +4,11 @@ const {
 
 module.exports = (sequelize) => {
     var Product = sequelize.define('Product', {
-        id:{
-            type: DataTypes.UUID,
-            primaryKey: true
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false,
         },
         barcode_1: {
             type: DataTypes.STRING(45),

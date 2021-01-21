@@ -3,12 +3,15 @@
     padding: 0%;
 }
 .navbar{
-    height: 45px;
-    background-color: rgb(240, 227, 227);
-    width: 100%;
+    height: 47px;
+    width: 100vw;
     margin: 0px;
     border-radius: 0% !important;
     position: relative;
+    border-radius: 0px!important;
+    background-color: #3f51b5!important;
+    color: #fff !important;
+    padding:0px !important;
 }
 .section-name{
     width: 100%;
@@ -28,7 +31,7 @@
     justify-content: flex-start;
     flex-direction: column;
 }
-#h-list {
+.hlist {
     display:flex;
     flex-direction: row ;
      
@@ -51,12 +54,16 @@
 .MuiContainer-root {
     max-width: 100vw !important;
 }
-.MuiList-padding{
+.MuiListPadding{
     padding: 0px !important;
 }
 .MuiListItemIcon-root{
-    min-width: 0px !important;
+    min-width: 1.8em !important;
 }
-.MuiPaper-root{
-    background-color: rgb(77, 198, 202) !important;
+
+.MuiSvgIcon-root{
+    color: #fff !important;
+}
+.MuiPaper-rounded{
+    border-radius: 0% !important;
 }

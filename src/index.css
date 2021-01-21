@@ -13,3 +13,10 @@ code {
     monospace;
   font-family: 'Roboto', sans-serif;
 }
+/*   Sobreescribo los margenes de los iconos en las listas y el color */
+.MuiListItemIcon-root{
+  min-width: 1.8em !important;
+}
+/*.MuiSvgIcon-root {
+  color: #fff;
+}*/
