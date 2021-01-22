@@ -17,7 +17,6 @@ function applyExtraSetup(sequelize) {
 	Order.hasMany(OrderItem);
 
 	Product.hasMany(OrderItem);
-	OrderItem.hasMany(Product);
 
 }
 //https://github.com/sequelize/express-example/tree/master/express-main-example/sequelize
