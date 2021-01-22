@@ -8,7 +8,8 @@ const {
 const sequelize = new Sequelize({
 	dialect: 'sqlite',
 	//dialectModule: 'sqlite',
-	storage: './db/basedatos.sqlite'
+	storage: './db/basedatos.sqlite',
+	logging: false
 })
 
 const modelDefiners = [

@@ -4,8 +4,9 @@ var validator = require('validator');
 module.exports = async ({barcode_1, ProductName, SupplierId, BasePrice , Price, Category, stock, expire_date, buy_date, trademark, total_profit }) => {
     try {
         var isValid = true;
-        isValid = isValid && !validator.isEmpty(ProductName) && !validator.isEmpty(SupplierId);
+        isValid = isValid && !validator.isEmpty(ProductName);
     } catch (err) {
+        console.log(err)
         return false;
     }
     if (isValid) {
@@ -13,7 +14,10 @@ module.exports = async ({barcode_1, ProductName, SupplierId, BasePrice , Price, 
             const product = await sequelize.models.Product.create({barcode_1, ProductName, SupplierId, BasePrice , Price, Category, stock, expire_date, buy_date, trademark, total_profit });
             await product.save();
             return true
-        }catch{return false;}
+        }catch(err){
+            console.log(err)
+            return false;
+        }
     } else {
         return false;
     }

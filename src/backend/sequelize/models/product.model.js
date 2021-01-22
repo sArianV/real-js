@@ -12,6 +12,7 @@ module.exports = (sequelize) => {
         },
         barcode_1: {
             type: DataTypes.STRING(45),
+            unique: true,
             allowNull: true,
         },
         ProductName: {
@@ -44,7 +45,6 @@ module.exports = (sequelize) => {
         },
         trademark: {
             type: DataTypes.STRING(45),
-            unique: true,
         },
         total_profit: {
             type: DataTypes.TEXT,
