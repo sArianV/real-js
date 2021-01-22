@@ -31,7 +31,7 @@ class CargaProveedor extends Component {
   render() {
     /**/
     return (
-      
+        
         <Paper elevation={6} className={Style.sizeBox}>
         <form onSubmit={this.handleSubmit}>
         
@@ -41,6 +41,7 @@ class CargaProveedor extends Component {
             id="CompanyName"
             label="Nombre de Proveedor"
             defaultValue=""
+            size="small"
             onChange={this.handleChange}
           />
           </div>
@@ -51,12 +52,13 @@ class CargaProveedor extends Component {
             id="Phone"
             label="Telefono"
             defaultValue=""
+            size="small"
             onChange={this.handleChange}
           />          
           </div>
           <br/>
           
-          <Button variant="contained" color="secondary" type="submit" className={Style.buttonProveedor}>
+          <Button variant="contained" color="secondary" type="submit" size="small" className={Style.buttonProveedor}>
             Guardar Proveedor
           </Button>
          

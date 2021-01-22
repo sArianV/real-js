@@ -2,8 +2,8 @@
     padding: 20px;
     *background-color: aliceblue !important;
     width: 210px;
-    border-radius: 16px!important;
+    *border-radius: 16px!important;
 }
 .buttonProveedor{
-    left:14px;
+    left:11%;
 }

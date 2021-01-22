@@ -41,6 +41,7 @@ class CargaProducto extends Component {
             id="barcode_1"
             label="Codigo"
             defaultValue=""
+            size="small"
             onChange={this.handleChange}
           />
           <TextField
@@ -48,6 +49,7 @@ class CargaProducto extends Component {
             id="ProductName"
             label="Nombre del Producto"
             defaultValue=""
+            size="small"
             onChange={this.handleChange}
           />
           </div>
@@ -58,6 +60,7 @@ class CargaProducto extends Component {
           id="trademark"
           label="Marca"
           defaultValue=""
+          size="small"
           onChange={this.handleChange}
           />
           <TextField
@@ -65,6 +68,7 @@ class CargaProducto extends Component {
             id="SupplierId"
             label="Proveedor"
             defaultValue=""
+            size="small"
             onChange={this.handleChange}
           />
           </div>
@@ -74,11 +78,13 @@ class CargaProducto extends Component {
             variant="outlined"
             id="BasePrice"
             label="Precio Lista"
+            size="small"
             onChange={this.handleChange}
           />
           <TextField
             variant="outlined"
             id="Price"
+            size="small"
             onChange={this.handleChange}
             label="Precio Venta"
           />
@@ -89,19 +95,21 @@ class CargaProducto extends Component {
             variant="outlined"
             id="stock"
             label="Stock"
+            size="small"
             onChange={this.handleChange}
           />
           <TextField
             variant="outlined"
             id="Category"
-            label="Categoria"            
+            label="Categoria"
+            size="small"           
             onChange={this.handleChange}
           />
           
           </div>
           <br/>
           
-          <Button variant="contained" type="submit" color="secondary" id="save-product-button">
+          <Button variant="contained" type="submit" color="secondary" size="small" id="save-product-button">
             Guardar Producto
           </Button>
           {/*<button>Submit</button>*/}
