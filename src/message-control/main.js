@@ -7,8 +7,8 @@ const supplierController = require('./../backend/controllers/supplier')
 const Codes = require('./MessajeConst');
 
 ipcMain.on('asynchronous-message', (event, arg) => {
-	var param = arg.param;
-	var result
+	let param = arg.param;
+	let result
 	switch (arg.code) {
 		case Codes.SAVE_CUSTOMER:
 			customerController.save(param)
@@ -33,13 +33,17 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 		case Codes.GET_PRODUCT:
 			result = productController.get(param)
 			console.log(result);
-			break;	
+			break;
+		case Codes.GET_SUPPLIERS:
+			result = supplierController.get();
+			console.log(result);
+			break;
 		default:
 			console.log("default")
 			console.log(arg);
 			break;
 	}
-	
+
 	event.reply('asynchronous-reply', result);
 });
  

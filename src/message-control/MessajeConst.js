@@ -6,5 +6,7 @@ module.exports = {
     SAVE_ORDERITEM:30,
     SAVE_PRODUCT:100,
     SAVE_SUPPLIER: 77,
-    GET_PRODUCT:9
+    GET_PRODUCT:9,
+    GET_SUPPLIERS:69
 }
+
