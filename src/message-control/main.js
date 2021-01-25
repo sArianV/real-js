@@ -44,7 +44,9 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 			result = Promise.resolve(123);
 			break;
 	}
-	result.then((value) => event.reply('asynchronous-reply', value))
+	result.then((value) => {
+		event.reply('asynchronous-reply', value)
+	})
 	
 });
  
