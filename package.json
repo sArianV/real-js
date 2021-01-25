@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "electron-builder": "^22.9.1",
+    "electron-reloader": "^1.2.0",
     "pg-hstore": "^2.3.3"
   }
 }

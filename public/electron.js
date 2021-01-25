@@ -6,6 +6,10 @@ const { app, BrowserWindow } = electron;
 
 //const BrowserWindow = electron.BrowserWindow;
 
+try {
+	require('electron-reloader')(module);
+} catch {}
+
 const path = require('path');
 const isDev = require('electron-is-dev');
 
