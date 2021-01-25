@@ -32,11 +32,11 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 			break;
 		case Codes.GET_PRODUCT:
 			result = productController.get(param)
-			console.log(result);
+			console.log("GET_PRODUCT");
 			break;
 		case Codes.GET_SUPPLIERS:
 			result = supplierController.get();
-			console.log(result);
+			console.log("GET_SUPPLIERS");
 			break;
 		default:
 			console.log("default")
