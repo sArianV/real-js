@@ -11,23 +11,23 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 	let result
 	switch (arg.code) {
 		case Codes.SAVE_CUSTOMER:
-			customerController.save(param)
+			result = customerController.save(param)
 			console.log("Save_Customer");
 			break;
 		case Codes.SAVE_ORDER:
-			orderController.save(param)
+			result = orderController.save(param)
 			console.log("Save_order");
 			break;
 		case Codes.SAVE_ORDERITEM:
-			orderItemController.save(param)
+			result = orderItemController.save(param)
 			console.log("Save_orderItem");
 			break;
 		case Codes.SAVE_PRODUCT:
-			productController.save(param)
+			result = productController.save(param)
 			console.log("Save_Product");
 			break;
 		case Codes.SAVE_SUPPLIER:
-			supplierController.save(param)
+			result = supplierController.save(param)
 			console.log("Save_supplier");
 			break;
 		case Codes.GET_PRODUCT:
@@ -41,9 +41,10 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 		default:
 			console.log("default")
 			console.log(arg);
+			result = Promise.resolve(123);
 			break;
 	}
-
-	event.reply('asynchronous-reply', result);
+	result.then((value) => event.reply('asynchronous-reply', value))
+	
 });
  

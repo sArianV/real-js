@@ -18,7 +18,6 @@ class CargaProveedor extends Component {
     Phone: "",
   };
   handleChange = (e) => {
-    console.log(e.target.id, e.target.value);
     this.setState({
       [e.target.id]: e.target.value,
     });

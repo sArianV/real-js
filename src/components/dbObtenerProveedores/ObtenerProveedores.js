@@ -6,18 +6,22 @@ import Style from './obtenerProveedores.module.css';
 
 const code = require("../../message-control/MessajeConst");
 function get() {
-  sendAsync({
+  console.log("send get supplier")
+  const result = sendAsync({
     code: code.GET_SUPPLIERS,
   }) /*.then((result) => setResponse(result))*/;
+  console.log(result)
+  result.then((x)=> console.log(x))
+  //return result
 }
 
 class ObtenerProveedores extends Component {
   constructor(props){
     super(props);
-    this.state = {suppliers:get()}
+    
+    this.state = {suppliers: get()}
   };
   handleChange = (e) => {
-    console.log(e.target.id, e.target.value);
     this.setState({
       [e.target.id]: e.target.value,
     });
