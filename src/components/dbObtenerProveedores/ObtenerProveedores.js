@@ -16,19 +16,17 @@ class ObtenerProveedores extends Component {
   constructor(props) {
     super(props);
     console.log("send get supplier");
-    this.state = { suppliers: [] };
+    this.state = { suppliers: []};
+  }
 
+  componentDidMount(){
     const response = sendAsync({
       code: code.GET_SUPPLIERS,
     });
 
     response.then((x) => {
-      console.log(x[0].CompanyName);
-      this.state.suppliers = x;
-      console.log(x)
-      console.log("+++++++++++++++++++++++++")
+      this.setState({suppliers: x})
     });
-
   }
 
   render() {
@@ -42,14 +40,14 @@ class ObtenerProveedores extends Component {
               <TableCell align="right">Telefono</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{this.state.suppliers.map((x) => (
+          <TableBody>{this.state.suppliers ? this.state.suppliers.map((x) => (
           <TableRow key={x.CompanyName}>
             <TableCell component="th" scope="row">
               {x.CompanyName}
             </TableCell>
             <TableCell align="right">{x.Phone}</TableCell>
           </TableRow>
-        ))}</TableBody>
+        )):"Cargando"}</TableBody>
         </Table>
       </TableContainer>
     );

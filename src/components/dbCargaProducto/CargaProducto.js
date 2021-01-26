@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Paper, TextField } from "@material-ui/core";
+import { Paper, TextField } from "@material-ui/core";
 import sendAsync from "../../message-control/renderer";
 import Button from '@material-ui/core/Button';
 import './CargaProducto.css'

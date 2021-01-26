@@ -4,7 +4,6 @@ import { Divider, List, ListItem, Paper, ListItemIcon, ListItemText } from '@mat
 import { Link as RouterLink } from 'react-router-dom';
 import Style from './h-navbar.module.css'
 //importar iconos
-import DraftsIcon from '@material-ui/icons/Drafts';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import BarChartIcon from '@material-ui/icons/BarChart';
