@@ -44,6 +44,7 @@ export default function SimpleDialogDemo() {
         variant="contained"
         color="secondary"
         onClick={handleClickOpen}
+        size="small"
       >
         Agregar Proveedor
       </Button>
