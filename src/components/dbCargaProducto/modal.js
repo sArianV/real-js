@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import CargaProducto from "./CargaProducto";
 import { Dialog, Button } from "@material-ui/core";
-
+import { Style } from "@material-ui/icons";
+import Styles from "./modal.module.css"
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
   const handleClose = () => {
@@ -38,12 +39,13 @@ export default function SimpleDialogDemo() {
   };
 
   return (
-    <div>
+    <div className={Styles.buttonContainer}>
       <Button
         variant="contained"
         color="secondary"
         onClick={handleClickOpen}
         size="small"
+        className={Styles.centerButton}
       >
         Agregar Producto
       </Button>
