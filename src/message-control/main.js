@@ -30,8 +30,8 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 			result = supplierController.save(param)
 			console.log("Save_supplier");
 			break;
-		case Codes.GET_PRODUCT:
-			result = productController.get(param)
+		case Codes.GET_PRODUCTS:
+			result = productController.get()
 			console.log("GET_PRODUCT");
 			break;
 		case Codes.GET_SUPPLIERS:

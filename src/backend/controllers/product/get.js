@@ -10,7 +10,7 @@ module.exports = async () => {
     }*/
     if (true) {
         try{
-            const product = await sequelize.models.Product.findAll(); 
+            const product = await sequelize.models.Product.findAll({raw: true}); 
             return product
         }catch(err){
             console.log(err)
