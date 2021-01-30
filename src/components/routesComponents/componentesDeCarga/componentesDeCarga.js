@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import NuevoProveedor from "../../dbCargaProveedor/modal"
-import NuevoProducto from "../../dbCargaProducto/modal"
+import NuevoProveedor from "../../dbCargaProveedor/CargaProveedor"
+import NuevoProducto from "../../dbCargaProducto/CargaProducto"
 import MostrarProveedores from "../../dbObtenerProveedores/ObtenerProveedores"
 
 import './componentesDeCarga.css'

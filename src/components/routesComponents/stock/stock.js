@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Grid, TextField } from "@material-ui/core";
 import sendAsync from "../../../message-control/renderer";
 const code = require("../../../message-control/MessajeConst");
 
@@ -26,20 +25,7 @@ class stock extends Component {
   render() {
     /**/
     return (
-      <Grid item xs={6} spacing={2}>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-          <TextField
-            variant="outlined"
-            id="id_product"
-            label="Id_Product"
-            defaultValue="00000000"
-            onChange={this.handleChange}
-          />
-          </div>
-          <button>Submit</button>
-        </form>
-      </Grid>
+      <div>tabla de prodductos</div>
     );
   }
 }

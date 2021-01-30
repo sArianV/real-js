@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Paper, TextField } from "@material-ui/core";
+
 import sendAsync from "../../message-control/renderer";
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+
 
 import './CargaProducto.css'
 
@@ -34,98 +33,7 @@ class CargaProducto extends Component {
   render() {
     /**/
     return (
-      <Paper elevation={6} spacing={2} className="sizeBox">
-        <div className="form-tittle"><h3>Cargar Producto</h3>
-          <Divider />
-        </div>
-        <form onSubmit={this.handleSubmit}>
-
-          <div>
-            <TextField
-              variant="outlined"
-              id="barcode_1"
-              label="Codigo"
-              defaultValue=""
-              size="small"
-              onChange={this.handleChange}
-            />
-            {"  "}
-            <TextField
-              variant="outlined"
-              id="ProductName"
-              label="Nombre del Producto"
-              defaultValue=""
-              size="small"
-              onChange={this.handleChange}
-            />
-          </div>
-          <br />
-          <div>
-            <TextField
-              variant="outlined"
-              id="trademark"
-              label="Marca"
-              defaultValue=""
-              size="small"
-              onChange={this.handleChange}
-            />
-            {"  "}
-            <TextField
-              variant="outlined"
-              id="SupplierId"
-              label="Proveedor"
-              defaultValue=""
-              size="small"
-              onChange={this.handleChange}
-            />
-          </div>
-          <br />
-          <div>
-            <TextField
-              variant="outlined"
-              id="BasePrice"
-              label="Precio Lista"
-              size="small"
-              onChange={this.handleChange}
-            />
-            {"  "}
-            <TextField
-              variant="outlined"
-              id="Price"
-              size="small"
-              onChange={this.handleChange}
-              label="Precio Venta"
-            />
-          </div>
-          <br />
-          <div>
-            <TextField
-              variant="outlined"
-              id="stock"
-              label="Stock"
-              size="small"
-              onChange={this.handleChange}
-            />
-            {"  "}
-            <TextField
-              variant="outlined"
-              id="Category"
-              label="Categoria"
-              size="small"
-              onChange={this.handleChange}
-            />
-
-          </div>
-          <br />
-
-          <Button variant="contained" type="submit" color="secondary" size="small" id="save-product-button">
-            Guardar Producto
-          </Button>
-          
-
-
-        </form>
-      </Paper>
+      <div>aca cargamos db</div>
     );
   }
 }

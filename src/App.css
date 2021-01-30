@@ -19,7 +19,7 @@
 .my-body{
   height: calc(100vh - 47px);
   max-height: calc(100vh - 47px);  
-  background-color: burlywood;
+  background-color: rgb(255, 255, 255);
   padding: 8px;
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { TextField, Paper } from "@material-ui/core";
+
 import sendAsync from "../../message-control/renderer";
-import Button from '@material-ui/core/Button';
+
 import Style from './cargaProveedor.module.css';
-import Divider from '@material-ui/core/Divider';
+
 
 const code = require("../../message-control/MessajeConst");
 function send(param) {
@@ -31,7 +31,8 @@ class CargaProveedor extends Component {
   render() {
     /**/
     return (
-
+      <div>form para carga de proveedores</div>
+/*
       <Paper elevation={6} className={Style.sizeBox}>
         <div className="form-tittle"><h3>Cargar Proveedor</h3>
           <Divider />
@@ -67,7 +68,7 @@ class CargaProveedor extends Component {
 
         </form>
       </Paper>
-
+    */
     );
   }
 }

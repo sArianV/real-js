@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Grid from '@material-ui/core/Grid';
+import { Button } from 'antd';
 
 import './style.css'
 class Caja extends Component{
@@ -27,18 +27,18 @@ class Caja extends Component{
         
 
         return(
-            <Grid container spacing={0}>
+            
                 <div className="flex">
                     <h1>
                         Caja de arena
                     </h1>
                     <p>{this.state.contador}</p>
                     <p>
-                        <input type="button" value ="Sumar" onClick={this.sumar}/>
-                        <input type="button" value ="Restar" onClick={this.restar}/>
+                        <Button type="primary"  onClick={this.sumar}> Sumar </Button>
+                        <Button type="primary"  onClick={this.restar}> Restar</Button>
                     </p>
                 </div>
-            </Grid>
+            
         )
     }
 }
