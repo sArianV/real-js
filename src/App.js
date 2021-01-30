@@ -7,7 +7,7 @@ import Stock from './components/routesComponents/stock/stock';
 import Balance from './components/routesComponents/balance/balance';	
 import Cargas from './components/routesComponents/componentesDeCarga/componentesDeCarga';	
 import Grid from '@material-ui/core/Grid';	
-import HNavbar from './components/h-navbar/h-navbar';
+import HNavbar from './components/h-navbar/navBar';
 
 import './App.css';	
 function App() {
