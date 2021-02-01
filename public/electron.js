@@ -20,6 +20,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1400, 
     height: 680,
+    icon: __dirname + './java-script.png', //solo soporta .ico y .png
     webPreferences: {
       nodeIntegration: true,
     }});
