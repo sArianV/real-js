@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  *font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  *font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  font-family: 'Roboto', sans-serif;
+}
+/*   Sobreescribo los margenes de los iconos en las listas y el color */
+.MuiListItemIcon-root{
+  min-width: 1.8em !important;
+}
+/*.MuiSvgIcon-root {
+  color: #fff;
+}*/

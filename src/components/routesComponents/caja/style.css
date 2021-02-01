@@ -1,0 +1,12 @@
+.paddingLeft{
+    position:absolute;
+    left:50%
+}
+.flex{
+    width: 100%;
+    *background-color: burlywood;
+    padding-left: 30%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}

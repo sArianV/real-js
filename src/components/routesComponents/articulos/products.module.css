@@ -1,0 +1,13 @@
+.articlesMenu{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    min-height: calc(97vh - 46px);
+}
+.flexItem{
+    position: absolute;
+    margin: 10px;
+    left:50%;
+    top:50%;
+}
