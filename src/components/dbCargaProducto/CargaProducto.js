@@ -18,7 +18,7 @@ class CargaProducto extends Component {
   state = {
     barcode_1: "-1",
     ProductName: "",
-    SupplierId: "",
+    CompanyName: "",
   };
   handleChange = (e) => {
     console.log(e.target.id, e.target.value);
@@ -72,7 +72,7 @@ class CargaProducto extends Component {
             {"  "}
             <TextField
               variant="outlined"
-              id="SupplierId"
+              id="CompanyName"
               label="Proveedor"
               defaultValue=""
               size="small"

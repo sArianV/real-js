@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Products from "./obtenerProductos"
 import Style from "./products.module.css"
 import NuevoProducto from "../../dbCargaProducto/modal"
 import TablaPiola from "./tablaDeProductos"

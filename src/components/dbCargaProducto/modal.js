@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import CargaProducto from "./CargaProducto";
 import { Dialog, Button } from "@material-ui/core";
-import { Style } from "@material-ui/icons";
 import Styles from "./modal.module.css"
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
