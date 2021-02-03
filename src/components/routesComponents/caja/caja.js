@@ -47,7 +47,7 @@ class Caja extends Component {
                     options={this.state.productos.sort((a, b) => a.barcode_1- b.barcode_1)}
                     getOptionLabel={(option) => option.barcode_1}
                     style={{ width: 300 }}
-                    renderInput={(params) => <TextField {...params} label="Codigo " variant="outlined" />}
+                    renderInput={(params) => <TextField {...params} label="Codigo" variant="outlined" />}
                 />
                 <div className="flex">
                     <h1>
