@@ -43,9 +43,6 @@ module.exports = (sequelize) => {
         buy_date: {
             type: DataTypes.DATE,
         },
-        trademark: {
-            type: DataTypes.STRING(45),
-        },
         total_profit: {
             type: DataTypes.TEXT,
         }

@@ -63,15 +63,6 @@ class CargaProducto extends Component {
           <div>
             <TextField
               variant="outlined"
-              id="trademark"
-              label="Marca"
-              defaultValue=""
-              size="small"
-              onChange={this.handleChange}
-            />
-            {"  "}
-            <TextField
-              variant="outlined"
               id="CompanyName"
               label="Proveedor"
               defaultValue=""

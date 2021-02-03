@@ -2,7 +2,7 @@ const sequelize = require("../../sequelize");
 var validator = require('validator');
 const supplierController = require('../supplier')
 
-module.exports = async ({barcode_1, ProductName, CompanyName, BasePrice , Price, Category, stock, expire_date, buy_date, trademark, total_profit }) => {
+module.exports = async ({barcode_1, ProductName, CompanyName, BasePrice , Price, Category, stock, expire_date, buy_date, total_profit }) => {
     try {
         var isValid = true;
         isValid = isValid && !validator.isEmpty(ProductName);
@@ -23,7 +23,7 @@ module.exports = async ({barcode_1, ProductName, CompanyName, BasePrice , Price,
                 id = aux.SupplierId;
             }
 
-            const product = await sequelize.models.Product.create({barcode_1, ProductName, SupplierId:id, BasePrice , Price, Category, stock, expire_date, buy_date, trademark, total_profit });
+            const product = await sequelize.models.Product.create({barcode_1, ProductName, SupplierId:id, BasePrice , Price, Category, stock, expire_date, buy_date, total_profit });
             await product.save();
             return true
         }catch(err){

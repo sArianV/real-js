@@ -9,8 +9,7 @@ class V extends Component {
         basePrice:null,
         price:null,
         category:null,
-        stock:null,
-        trademark:null
+        stock:null
       }
       handleChange = (e) => {
         console.log(e.target.id, e.target.value);

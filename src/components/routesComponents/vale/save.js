@@ -11,7 +11,7 @@ function save(msj) {
     const code = require('../../../message-control/MessajeConst')
 
     function send(obj) {
-        sendAsync({code:code.SAVE_PRODUCT, param:{ProductName:obj.name , SupplierId:obj.supplierId, , trademark:"465316121" }}).then((result) => setResponse(result));
+        sendAsync({code:code.SAVE_PRODUCT, param:{ProductName:obj.name , SupplierId:obj.supplierId }}).then((result) => setResponse(result));
     }
 
     return (

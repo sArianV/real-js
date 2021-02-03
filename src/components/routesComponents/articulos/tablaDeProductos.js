@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
   { id: 'name', label: 'Nombre', minWidth: '100px' },
-  { id: 'trademark', label: 'Marca', minWidth: '100px' },
+  { label: 'Marca', minWidth: '100px' },
   {
     id: 'category',
     label: 'Categoria',
@@ -42,8 +42,8 @@ const columns = [
   },
 ];
 
-function createData(name, trademark, category, code, plista, price) {
-  return { name, trademark, category, code,plista, price };
+function createData(name, category, code, plista, price) {
+  return { name, category, code,plista, price };
 }
 
 
@@ -67,7 +67,7 @@ export default function StickyHeadTable(props) {
   console.log(prod)
   var rows = []
   prod.map((x) => (
-    rows.push(createData(x.ProductName, x.trademark, x.Category, x.barcode_1,x.BasePrice, x.Price))
+    rows.push(createData(x.ProductName, x.Category, x.barcode_1,x.BasePrice, x.Price))
   ));
   /*const rows = [
     createData('India', 'IN', 1324171354, 3287263),

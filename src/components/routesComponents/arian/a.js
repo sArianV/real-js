@@ -18,8 +18,7 @@ class A extends Component {
       BasePrice:"50",
       Price:"75",
       Category:"46",
-      Stock:"4564",
-      trademark:"564598"        
+      Stock:"4564"     
     }
       handleChange = (e) => {
         console.log(e.target.id, e.target.value);
@@ -65,10 +64,6 @@ class A extends Component {
                 <br/>
                 <label htmlFor="Stock">cantidad de productos:</label>
                 <input type="text"id="Stock" onChange={this.handleChange} />
-                <br/>
-                <br/>
-                <label htmlFor="trademark">cod de barra:</label>
-                <input type="text"id="trademark" onChange={this.handleChange} />
                 <br/>
                 <br/>
                 <button>Submit</button>
