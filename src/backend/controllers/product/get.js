@@ -8,7 +8,6 @@ module.exports = async () => {
     } catch (err) {
         return false;
     }*/
-    if (true) {
         try{
             const product = await sequelize.models.Product.findAll({raw: true}); 
             return product
@@ -16,7 +15,4 @@ module.exports = async () => {
             console.log(err)
             return false;
         }
-    } else {
-        return false;
-    }
 };
