@@ -20,7 +20,7 @@
   height: calc(100vh - 47px);
   max-height: calc(100vh - 47px);  
   background-color: burlywood;
-  padding: 8px;
+  *padding: 8px;
 }
 
 .App-logo {
